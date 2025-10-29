@@ -21,34 +21,20 @@ A beautiful, modern admin dashboard template inspired by Apple's liquid glass (g
 ### Prerequisites
 
 - A modern web browser (Chrome, Firefox, Safari, Edge)
-- A local web server (optional, but recommended)
 
 ### Installation
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/liquid-glass-admin-template.git
+git clone https://github.com/Dexterwura/liquidglassadmin.github.io.git
 ```
 
 2. Navigate to the project directory:
 ```bash
-cd liquid-glass-admin-template
+cd liquidglassadmin.github.io
 ```
 
-3. Open `index.html` in your web browser or serve it using a local server:
-
-```bash
-# Using Python
-python -m http.server 8000
-
-# Using Node.js (http-server)
-npx http-server
-
-# Using PHP
-php -S localhost:8000
-```
-
-4. Open `http://localhost:8000` in your browser.
+3. Open `index.html` in your web browser.
 
 ## 📁 Project Structure
 
@@ -134,7 +120,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/yourusername/liquid-glass-admin-template/issues).
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/Dexterwura/liquidglassadmin.github.io/issues).
 
 ## 🙏 Acknowledgments
 
@@ -146,7 +132,7 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 
 Your Name - [@yourusername](https://twitter.com/yourusername)
 
-Project Link: [https://github.com/yourusername/liquid-glass-admin-template](https://github.com/yourusername/liquid-glass-admin-template)
+Project Link: [https://liquidglassadmin.github.io](https://liquidglassadmin.github.io)
 
 ---
 
