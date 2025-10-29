@@ -43,15 +43,33 @@ cd liquidglassadmin.github.io
 ```
 liquid-glass-admin-template/
 │
-├── index.html              # Main HTML file
-├── README.md              # Project documentation
+├── index.html              # Landing page
+├── dashboard.html          # Main dashboard page
+├── analytics.html          # Analytics page
+├── users.html              # Users management page
+├── products.html           # Products page
+├── orders.html             # Orders page
+├── messages.html           # Messages page
+├── notifications.html      # Notifications page
+├── calendar.html           # Calendar page
+├── reports.html            # Reports page
+├── profile.html            # Profile page
+├── settings.html           # Settings page
+├── modals.html             # Modals demo page
+├── login.html              # Login page
+├── signup.html             # Sign up page
+├── README.md               # Project documentation
+├── LICENSE                 # MIT License
 │
 └── assets/
     ├── css/
-    │   └── style.css      # Main stylesheet
+    │   └── style.css       # Main stylesheet
     ├── js/
-    │   └── main.js        # Main JavaScript file
-    └── images/            # Image assets folder
+    │   ├── main.js         # Main JavaScript file
+    │   ├── analytics.js    # Analytics page scripts
+    │   └── modals.js       # Modals functionality
+    └── images/
+        └── dash.png        # Dashboard preview image
 ```
 
 ## 🎨 Components
