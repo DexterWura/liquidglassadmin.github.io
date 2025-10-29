@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics - Liquid Glass Admin Dashboard</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" style="text-decoration: none; color: inherit;">
+                <h1 class="logo">Liquid Glass</h1>
+            </a>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <i class="fa-solid fa-house nav-icon"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="analytics.html" class="nav-item active">
+                <i class="fa-solid fa-chart-line nav-icon"></i>
+                <span>Analytics</span>
+            </a>
+            <a href="users.html" class="nav-item">
+                <i class="fa-solid fa-users nav-icon"></i>
+                <span>Users</span>
+            </a>
+            <a href="products.html" class="nav-item">
+                <i class="fa-solid fa-cube nav-icon"></i>
+                <span>Products</span>
+            </a>
+            <a href="orders.html" class="nav-item">
+                <i class="fa-solid fa-shopping-bag nav-icon"></i>
+                <span>Orders</span>
+            </a>
+            <a href="messages.html" class="nav-item">
+                <i class="fa-solid fa-envelope nav-icon"></i>
+                <span>Messages</span>
+            </a>
+            <a href="notifications.html" class="nav-item">
+                <i class="fa-solid fa-bell nav-icon"></i>
+                <span>Notifications</span>
+            </a>
+            <a href="calendar.html" class="nav-item">
+                <i class="fa-solid fa-calendar nav-icon"></i>
+                <span>Calendar</span>
+            </a>
+            <a href="reports.html" class="nav-item">
+                <i class="fa-solid fa-file-lines nav-icon"></i>
+                <span>Reports</span>
+            </a>
+            <a href="profile.html" class="nav-item">
+                <i class="fa-solid fa-user nav-icon"></i>
+                <span>Profile</span>
+            </a>
+            <a href="modals.html" class="nav-item">
+                <i class="fa-solid fa-window-maximize nav-icon"></i>
+                <span>Modals</span>
+            </a>
+            <a href="settings.html" class="nav-item">
+                <i class="fa-solid fa-gear nav-icon"></i>
+                <span>Settings</span>
+            </a>
+        </nav>
+        <div class="sidebar-version">v0.01</div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Bar -->
+        <header class="top-bar">
+            <div class="top-bar-left">
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <h2 class="page-title">Analytics</h2>
+            </div>
+            <div class="top-bar-right">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+                <button class="notification-btn">
+                    <i class="fa-solid fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+                <div class="user-profile">
+                    <img src="https://ui-avatars.com/api/?name=Admin&background=random" alt="User" class="profile-img">
+                </div>
+            </div>
+        </header>
+
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumbs">
+            <a href="index.html">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+            <span class="breadcrumb-separator">
+                <i class="fa-solid fa-chevron-right"></i>
+            </span>
+            <a href="dashboard.html">Dashboard</a>
+            <span class="breadcrumb-separator">
+                <i class="fa-solid fa-chevron-right"></i>
+            </span>
+            <span class="breadcrumb-current">Analytics</span>
+        </nav>
+
+        <!-- Analytics Content -->
+        <div class="dashboard-content">
+            <!-- Key Metrics -->
+            <section class="stats-section">
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <h3>Total Visits</h3>
+                        <i class="fa-solid fa-eye stat-icon"></i>
+                    </div>
+                    <div class="stat-card-body">
+                        <p class="stat-value">125,432</p>
+                        <p class="stat-change positive">+15.3% from last month</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <h3>Bounce Rate</h3>
+                        <i class="fa-solid fa-arrow-trend-down stat-icon"></i>
+                    </div>
+                    <div class="stat-card-body">
+                        <p class="stat-value">32.4%</p>
+                        <p class="stat-change negative">+2.1% from last month</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <h3>Page Views</h3>
+                        <i class="fa-solid fa-file-lines stat-icon"></i>
+                    </div>
+                    <div class="stat-card-body">
+                        <p class="stat-value">89,234</p>
+                        <p class="stat-change positive">+8.7% from last month</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <h3>Avg. Session</h3>
+                        <i class="fa-solid fa-clock stat-icon"></i>
+                    </div>
+                    <div class="stat-card-body">
+                        <p class="stat-value">4m 23s</p>
+                        <p class="stat-change positive">+12.5% from last month</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Charts Section -->
+            <section class="charts-section">
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>Visitor Analytics</h3>
+                        <div class="chart-controls">
+                            <button class="chart-btn active">7D</button>
+                            <button class="chart-btn">30D</button>
+                            <button class="chart-btn">90D</button>
+                        </div>
+                    </div>
+                    <div class="chart-body">
+                        <canvas id="visitorChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="chart-card">
+                    <div class="chart-header">
+                        <h3>Traffic Sources</h3>
+                    </div>
+                    <div class="chart-body">
+                        <canvas id="sourceChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Additional Analytics -->
+            <section class="additional-cards">
+                <div class="info-card">
+                    <div class="card-header">
+                        <h3>Top Pages</h3>
+                        <a href="#" class="view-all">View All</a>
+                    </div>
+                    <div class="card-body">
+                        <div class="product-item">
+                            <div class="product-info">
+                                <i class="fa-solid fa-home" style="font-size: 1.5rem; color: var(--primary-color);"></i>
+                                <div>
+                                    <p class="product-name">Home Page</p>
+                                    <p class="product-sales">12,345 views</p>
+                                </div>
+                            </div>
+                            <div class="product-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 92%"></div>
+                                </div>
+                                <span class="progress-value">92%</span>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <div class="product-info">
+                                <i class="fa-solid fa-shopping-bag" style="font-size: 1.5rem; color: var(--primary-color);"></i>
+                                <div>
+                                    <p class="product-name">Products Page</p>
+                                    <p class="product-sales">8,765 views</p>
+                                </div>
+                            </div>
+                            <div class="product-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 68%"></div>
+                                </div>
+                                <span class="progress-value">68%</span>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <div class="product-info">
+                                <i class="fa-solid fa-info-circle" style="font-size: 1.5rem; color: var(--primary-color);"></i>
+                                <div>
+                                    <p class="product-name">About Page</p>
+                                    <p class="product-sales">5,432 views</p>
+                                </div>
+                            </div>
+                            <div class="product-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 42%"></div>
+                                </div>
+                                <span class="progress-value">42%</span>
+                            </div>
+                        </div>
+                        <div class="product-item">
+                            <div class="product-info">
+                                <i class="fa-solid fa-envelope" style="font-size: 1.5rem; color: var(--primary-color);"></i>
+                                <div>
+                                    <p class="product-name">Contact Page</p>
+                                    <p class="product-sales">3,210 views</p>
+                                </div>
+                            </div>
+                            <div class="product-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 25%"></div>
+                                </div>
+                                <span class="progress-value">25%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="card-header">
+                        <h3>Device Analytics</h3>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="deviceChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="card-header">
+                        <h3>Geographic Distribution</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="transaction-item">
+                            <div class="transaction-info">
+                                <div class="transaction-avatar" style="background: #007aff;">US</div>
+                                <div>
+                                    <p class="transaction-name">United States</p>
+                                    <p class="transaction-date">45,234 visits</p>
+                                </div>
+                            </div>
+                            <div class="transaction-amount positive">36.2%</div>
+                        </div>
+                        <div class="transaction-item">
+                            <div class="transaction-info">
+                                <div class="transaction-avatar" style="background: #5856d6;">UK</div>
+                                <div>
+                                    <p class="transaction-name">United Kingdom</p>
+                                    <p class="transaction-date">23,456 visits</p>
+                                </div>
+                            </div>
+                            <div class="transaction-amount positive">18.7%</div>
+                        </div>
+                        <div class="transaction-item">
+                            <div class="transaction-info">
+                                <div class="transaction-avatar" style="background: #af52de;">CA</div>
+                                <div>
+                                    <p class="transaction-name">Canada</p>
+                                    <p class="transaction-date">15,789 visits</p>
+                                </div>
+                            </div>
+                            <div class="transaction-amount positive">12.6%</div>
+                        </div>
+                        <div class="transaction-item">
+                            <div class="transaction-info">
+                                <div class="transaction-avatar" style="background: #ff2d55;">DE</div>
+                                <div>
+                                    <p class="transaction-name">Germany</p>
+                                    <p class="transaction-date">12,345 visits</p>
+                                </div>
+                            </div>
+                            <div class="transaction-amount positive">9.8%</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="copyright">© 2024 Liquid Glass Admin Template. All rights reserved.</p>
+            <p class="developer">
+                Developed with <i class="fa-solid fa-heart"></i> by 
+                <strong>
+                    <a href="https://www.linkedin.com/in/dexterity-wurayayi-967a64230" target="_blank" rel="noopener noreferrer" style="color: var(--text-primary); text-decoration: none; transition: var(--transition);">
+                        DexterWura
+                        <i class="fa-brands fa-linkedin" style="margin-left: 0.5rem; font-size: 0.85rem;"></i>
+                    </a>
+                </strong>
+            </p>
+        </div>
+    </footer>
+
+    <script src="assets/js/analytics.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+

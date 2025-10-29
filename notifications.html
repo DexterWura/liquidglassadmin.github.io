@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications - Liquid Glass Admin Dashboard</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" style="text-decoration: none; color: inherit;">
+                <h1 class="logo">Liquid Glass</h1>
+            </a>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <i class="fa-solid fa-house nav-icon"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="analytics.html" class="nav-item">
+                <i class="fa-solid fa-chart-line nav-icon"></i>
+                <span>Analytics</span>
+            </a>
+            <a href="users.html" class="nav-item">
+                <i class="fa-solid fa-users nav-icon"></i>
+                <span>Users</span>
+            </a>
+            <a href="products.html" class="nav-item">
+                <i class="fa-solid fa-cube nav-icon"></i>
+                <span>Products</span>
+            </a>
+            <a href="orders.html" class="nav-item">
+                <i class="fa-solid fa-shopping-bag nav-icon"></i>
+                <span>Orders</span>
+            </a>
+            <a href="messages.html" class="nav-item">
+                <i class="fa-solid fa-envelope nav-icon"></i>
+                <span>Messages</span>
+            </a>
+            <a href="notifications.html" class="nav-item active">
+                <i class="fa-solid fa-bell nav-icon"></i>
+                <span>Notifications</span>
+            </a>
+            <a href="calendar.html" class="nav-item">
+                <i class="fa-solid fa-calendar nav-icon"></i>
+                <span>Calendar</span>
+            </a>
+            <a href="reports.html" class="nav-item">
+                <i class="fa-solid fa-file-lines nav-icon"></i>
+                <span>Reports</span>
+            </a>
+            <a href="profile.html" class="nav-item">
+                <i class="fa-solid fa-user nav-icon"></i>
+                <span>Profile</span>
+            </a>
+            <a href="modals.html" class="nav-item">
+                <i class="fa-solid fa-window-maximize nav-icon"></i>
+                <span>Modals</span>
+            </a>
+            <a href="settings.html" class="nav-item">
+                <i class="fa-solid fa-gear nav-icon"></i>
+                <span>Settings</span>
+            </a>
+        </nav>
+        <div class="sidebar-version">v0.01</div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Bar -->
+        <header class="top-bar">
+            <div class="top-bar-left">
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <h2 class="page-title">Notifications</h2>
+            </div>
+            <div class="top-bar-right">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+                <button class="notification-btn">
+                    <i class="fa-solid fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+                <button class="notification-btn" style="background: var(--primary-color); border-color: var(--primary-color); color: white;">
+                    <i class="fa-solid fa-check-double"></i> Mark All Read
+                </button>
+                <div class="user-profile">
+                    <img src="https://ui-avatars.com/api/?name=Admin&background=random" alt="User" class="profile-img">
+                </div>
+            </div>
+        </header>
+
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumbs">
+            <a href="index.html">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+            <span class="breadcrumb-separator">
+                <i class="fa-solid fa-chevron-right"></i>
+            </span>
+            <a href="dashboard.html">Dashboard</a>
+            <span class="breadcrumb-separator">
+                <i class="fa-solid fa-chevron-right"></i>
+            </span>
+            <span class="breadcrumb-current">Notifications</span>
+        </nav>
+
+        <!-- Notifications Content -->
+        <div class="dashboard-content">
+            <!-- Notification Stats -->
+            <section class="stats-section">
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <h3>Unread</h3>
+                        <i class="fa-solid fa-envelope stat-icon"></i>
+                    </div>
+                    <div class="stat-card-body">
+                        <p class="stat-value">12</p>
+                        <p class="stat-change negative">Needs attention</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <h3>Today</h3>
+                        <i class="fa-solid fa-calendar-day stat-icon"></i>
+                    </div>
+                    <div class="stat-card-body">
+                        <p class="stat-value">8</p>
+                        <p class="stat-change positive">Notifications</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <h3>This Week</h3>
+                        <i class="fa-solid fa-calendar-week stat-icon"></i>
+                    </div>
+                    <div class="stat-card-body">
+                        <p class="stat-value">45</p>
+                        <p class="stat-change positive">Total notifications</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <h3>Priority</h3>
+                        <i class="fa-solid fa-exclamation stat-icon"></i>
+                    </div>
+                    <div class="stat-card-body">
+                        <p class="stat-value">3</p>
+                        <p class="stat-change negative">Urgent</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Notifications List -->
+            <section class="additional-cards" style="grid-template-columns: 1fr;">
+                <div class="info-card">
+                    <div class="card-header">
+                        <h3>All Notifications</h3>
+                        <div style="display: flex; gap: 1rem; align-items: center;">
+                            <select style="background: rgba(0, 0, 0, 0.04); border: 1px solid var(--glass-border); border-radius: 8px; padding: 0.5rem 1rem; color: var(--text-primary); font-size: 0.9rem;">
+                                <option>All</option>
+                                <option>Unread</option>
+                                <option>Read</option>
+                                <option>Priority</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="transaction-item" style="border-left: 4px solid #007aff; background: rgba(0, 122, 255, 0.05);">
+                            <div class="transaction-info">
+                                <div class="transaction-avatar" style="background: #007aff;">
+                                    <i class="fa-solid fa-user-plus" style="color: white; font-size: 0.8rem;"></i>
+                                </div>
+                                <div style="flex: 1;">
+                                    <p class="transaction-name">New user registered</p>
+                                    <p class="transaction-date">John Doe just signed up for your service</p>
+                                    <p style="margin: 0.5rem 0 0 0; font-size: 0.8rem; color: var(--text-tertiary);">2 minutes ago</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <span style="width: 8px; height: 8px; background: #007aff; border-radius: 50%;"></span>
+                                <i class="fa-solid fa-ellipsis-vertical" style="color: var(--text-tertiary); cursor: pointer;"></i>
+                            </div>
+                        </div>
+                        <div class="transaction-item" style="border-left: 4px solid #10b981;">
+                            <div class="transaction-info">
+                                <div class="transaction-avatar" style="background: #10b981;">
+                                    <i class="fa-solid fa-check" style="color: white; font-size: 0.8rem;"></i>
+                                </div>
+                                <div style="flex: 1;">
+                                    <p class="transaction-name">Order completed</p>
+                                    <p class="transaction-date">Order #1234 has been successfully delivered</p>
+                                    <p style="margin: 0.5rem 0 0 0; font-size: 0.8rem; color: var(--text-tertiary);">15 minutes ago</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <i class="fa-solid fa-ellipsis-vertical" style="color: var(--text-tertiary); cursor: pointer;"></i>
+                            </div>
+                        </div>
+                        <div class="transaction-item" style="border-left: 4px solid #ff9500;">
+                            <div class="transaction-info">
+                                <div class="transaction-avatar" style="background: #ff9500;">
+                                    <i class="fa-solid fa-exclamation-triangle" style="color: white; font-size: 0.8rem;"></i>
+                                </div>
+                                <div style="flex: 1;">
+                                    <p class="transaction-name">Low stock alert</p>
+                                    <p class="transaction-date">Product "Mobile App" is running low on inventory</p>
+                                    <p style="margin: 0.5rem 0 0 0; font-size: 0.8rem; color: var(--text-tertiary);">1 hour ago</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <span style="width: 8px; height: 8px; background: #ff9500; border-radius: 50%;"></span>
+                                <i class="fa-solid fa-ellipsis-vertical" style="color: var(--text-tertiary); cursor: pointer;"></i>
+                            </div>
+                        </div>
+                        <div class="transaction-item" style="border-left: 4px solid #af52de;">
+                            <div class="transaction-info">
+                                <div class="transaction-avatar" style="background: #af52de;">
+                                    <i class="fa-solid fa-star" style="color: white; font-size: 0.8rem;"></i>
+                                </div>
+                                <div style="flex: 1;">
+                                    <p class="transaction-name">New review received</p>
+                                    <p class="transaction-date">You received a 5-star review from Jane Smith</p>
+                                    <p style="margin: 0.5rem 0 0 0; font-size: 0.8rem; color: var(--text-tertiary);">2 hours ago</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <i class="fa-solid fa-ellipsis-vertical" style="color: var(--text-tertiary); cursor: pointer;"></i>
+                            </div>
+                        </div>
+                        <div class="transaction-item" style="border-left: 4px solid #ff2d55;">
+                            <div class="transaction-info">
+                                <div class="transaction-avatar" style="background: #ff2d55;">
+                                    <i class="fa-solid fa-credit-card" style="color: white; font-size: 0.8rem;"></i>
+                                </div>
+                                <div style="flex: 1;">
+                                    <p class="transaction-name">Payment received</p>
+                                    <p class="transaction-date">Payment of $234.50 has been processed</p>
+                                    <p style="margin: 0.5rem 0 0 0; font-size: 0.8rem; color: var(--text-tertiary);">3 hours ago</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <i class="fa-solid fa-ellipsis-vertical" style="color: var(--text-tertiary); cursor: pointer;"></i>
+                            </div>
+                        </div>
+                        <div class="transaction-item">
+                            <div class="transaction-info">
+                                <div class="transaction-avatar" style="background: rgba(0, 0, 0, 0.2);">
+                                    <i class="fa-solid fa-envelope" style="color: white; font-size: 0.8rem;"></i>
+                                </div>
+                                <div style="flex: 1;">
+                                    <p class="transaction-name">System update</p>
+                                    <p class="transaction-date">Your system has been updated to version 2.1.0</p>
+                                    <p style="margin: 0.5rem 0 0 0; font-size: 0.8rem; color: var(--text-tertiary);">1 day ago</p>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.5rem;">
+                                <i class="fa-solid fa-ellipsis-vertical" style="color: var(--text-tertiary); cursor: pointer;"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="copyright">© 2024 Liquid Glass Admin Template. All rights reserved.</p>
+            <p class="developer">
+                Developed with <i class="fa-solid fa-heart"></i> by 
+                <strong>
+                    <a href="https://www.linkedin.com/in/dexterity-wurayayi-967a64230" target="_blank" rel="noopener noreferrer" style="color: var(--text-primary); text-decoration: none; transition: var(--transition);">
+                        DexterWura
+                        <i class="fa-brands fa-linkedin" style="margin-left: 0.5rem; font-size: 0.85rem;"></i>
+                    </a>
+                </strong>
+            </p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+

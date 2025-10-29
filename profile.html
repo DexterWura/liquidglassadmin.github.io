@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Liquid Glass Admin Dashboard</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" style="text-decoration: none; color: inherit;">
+                <h1 class="logo">Liquid Glass</h1>
+            </a>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <i class="fa-solid fa-house nav-icon"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="analytics.html" class="nav-item">
+                <i class="fa-solid fa-chart-line nav-icon"></i>
+                <span>Analytics</span>
+            </a>
+            <a href="users.html" class="nav-item">
+                <i class="fa-solid fa-users nav-icon"></i>
+                <span>Users</span>
+            </a>
+            <a href="products.html" class="nav-item">
+                <i class="fa-solid fa-cube nav-icon"></i>
+                <span>Products</span>
+            </a>
+            <a href="orders.html" class="nav-item">
+                <i class="fa-solid fa-shopping-bag nav-icon"></i>
+                <span>Orders</span>
+            </a>
+            <a href="messages.html" class="nav-item">
+                <i class="fa-solid fa-envelope nav-icon"></i>
+                <span>Messages</span>
+            </a>
+            <a href="notifications.html" class="nav-item">
+                <i class="fa-solid fa-bell nav-icon"></i>
+                <span>Notifications</span>
+            </a>
+            <a href="calendar.html" class="nav-item">
+                <i class="fa-solid fa-calendar nav-icon"></i>
+                <span>Calendar</span>
+            </a>
+            <a href="reports.html" class="nav-item">
+                <i class="fa-solid fa-file-lines nav-icon"></i>
+                <span>Reports</span>
+            </a>
+            <a href="profile.html" class="nav-item active">
+                <i class="fa-solid fa-user nav-icon"></i>
+                <span>Profile</span>
+            </a>
+            <a href="modals.html" class="nav-item">
+                <i class="fa-solid fa-window-maximize nav-icon"></i>
+                <span>Modals</span>
+            </a>
+            <a href="settings.html" class="nav-item">
+                <i class="fa-solid fa-gear nav-icon"></i>
+                <span>Settings</span>
+            </a>
+        </nav>
+        <div class="sidebar-version">v0.01</div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Bar -->
+        <header class="top-bar">
+            <div class="top-bar-left">
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <h2 class="page-title">Profile</h2>
+            </div>
+            <div class="top-bar-right">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+                <button class="notification-btn">
+                    <i class="fa-solid fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+                <div class="user-profile">
+                    <img src="https://ui-avatars.com/api/?name=Admin&background=random" alt="User" class="profile-img">
+                </div>
+            </div>
+        </header>
+
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumbs">
+            <a href="index.html">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+            <span class="breadcrumb-separator">
+                <i class="fa-solid fa-chevron-right"></i>
+            </span>
+            <a href="dashboard.html">Dashboard</a>
+            <span class="breadcrumb-separator">
+                <i class="fa-solid fa-chevron-right"></i>
+            </span>
+            <span class="breadcrumb-current">Profile</span>
+        </nav>
+
+        <!-- Profile Content -->
+        <div class="dashboard-content">
+            <section class="additional-cards" style="grid-template-columns: 350px 1fr; gap: 1.5rem;">
+                <!-- Profile Sidebar -->
+                <div>
+                    <div class="info-card" style="text-align: center; padding: 2rem;">
+                        <img src="https://ui-avatars.com/api/?name=Admin+User&size=150&background=007aff" alt="Profile" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid var(--glass-border); margin-bottom: 1.5rem;">
+                        <h3 style="margin: 0 0 0.5rem 0; color: var(--text-primary);">Admin User</h3>
+                        <p style="margin: 0 0 1.5rem 0; color: var(--text-secondary);">admin@example.com</p>
+                        <button style="width: 100%; padding: 0.875rem; background: var(--primary-color); color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 500; margin-bottom: 1rem;">
+                            <i class="fa-solid fa-edit"></i> Edit Profile
+                        </button>
+                        <div style="display: flex; gap: 0.5rem; justify-content: center;">
+                            <button style="padding: 0.75rem; background: rgba(0, 0, 0, 0.04); border: 1px solid var(--glass-border); border-radius: 8px; cursor: pointer; color: var(--text-primary);">
+                                <i class="fa-brands fa-twitter"></i>
+                            </button>
+                            <button style="padding: 0.75rem; background: rgba(0, 0, 0, 0.04); border: 1px solid var(--glass-border); border-radius: 8px; cursor: pointer; color: var(--text-primary);">
+                                <i class="fa-brands fa-linkedin"></i>
+                            </button>
+                            <button style="padding: 0.75rem; background: rgba(0, 0, 0, 0.04); border: 1px solid var(--glass-border); border-radius: 8px; cursor: pointer; color: var(--text-primary);">
+                                <i class="fa-brands fa-github"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="info-card" style="margin-top: 1.5rem;">
+                        <div class="card-header">
+                            <h3>Statistics</h3>
+                        </div>
+                        <div class="card-body">
+                            <div style="padding: 1rem; background: rgba(0, 0, 0, 0.02); border-radius: 12px; margin-bottom: 0.75rem;">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span style="font-size: 0.9rem; color: var(--text-secondary);">Projects</span>
+                                    <strong style="font-size: 1.25rem; color: var(--text-primary);">24</strong>
+                                </div>
+                            </div>
+                            <div style="padding: 1rem; background: rgba(0, 0, 0, 0.02); border-radius: 12px; margin-bottom: 0.75rem;">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span style="font-size: 0.9rem; color: var(--text-secondary);">Tasks</span>
+                                    <strong style="font-size: 1.25rem; color: var(--text-primary);">156</strong>
+                                </div>
+                            </div>
+                            <div style="padding: 1rem; background: rgba(0, 0, 0, 0.02); border-radius: 12px;">
+                                <div style="display: flex; justify-content: space-between; align-items: center;">
+                                    <span style="font-size: 0.9rem; color: var(--text-secondary);">Completed</span>
+                                    <strong style="font-size: 1.25rem; color: var(--text-primary);">142</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profile Details -->
+                <div>
+                    <div class="info-card">
+                        <div class="card-header">
+                            <h3>About</h3>
+                            <button style="padding: 0.5rem 1rem; background: var(--primary-color); color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 0.85rem;">
+                                <i class="fa-solid fa-edit"></i> Edit
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <p style="margin: 0 0 1.5rem 0; color: var(--text-secondary); line-height: 1.6;">Experienced admin professional with a passion for creating beautiful user interfaces and managing complex systems. Always striving for excellence and innovation.</p>
+                            <div style="display: grid; gap: 1rem;">
+                                <div style="display: flex; align-items: center; gap: 1rem;">
+                                    <i class="fa-solid fa-briefcase" style="color: var(--primary-color); width: 20px;"></i>
+                                    <div>
+                                        <p style="margin: 0; font-weight: 500; color: var(--text-primary);">Senior Administrator</p>
+                                        <p style="margin: 0; font-size: 0.85rem; color: var(--text-tertiary);">Liquid Glass Inc.</p>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 1rem;">
+                                    <i class="fa-solid fa-location-dot" style="color: var(--primary-color); width: 20px;"></i>
+                                    <div>
+                                        <p style="margin: 0; font-weight: 500; color: var(--text-primary);">San Francisco, CA</p>
+                                        <p style="margin: 0; font-size: 0.85rem; color: var(--text-tertiary);">United States</p>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 1rem;">
+                                    <i class="fa-solid fa-calendar" style="color: var(--primary-color); width: 20px;"></i>
+                                    <div>
+                                        <p style="margin: 0; font-weight: 500; color: var(--text-primary);">Joined January 2020</p>
+                                        <p style="margin: 0; font-size: 0.85rem; color: var(--text-tertiary);">4 years ago</p>
+                                    </div>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 1rem;">
+                                    <i class="fa-solid fa-phone" style="color: var(--primary-color); width: 20px;"></i>
+                                    <div>
+                                        <p style="margin: 0; font-weight: 500; color: var(--text-primary);">+1 (555) 123-4567</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-card" style="margin-top: 1.5rem;">
+                        <div class="card-header">
+                            <h3>Activity</h3>
+                            <a href="#" class="view-all">View All</a>
+                        </div>
+                        <div class="card-body">
+                            <div class="transaction-item">
+                                <div class="transaction-info">
+                                    <div class="transaction-avatar" style="background: #007aff;">
+                                        <i class="fa-solid fa-file-export" style="color: white; font-size: 0.8rem;"></i>
+                                    </div>
+                                    <div>
+                                        <p class="transaction-name">Exported report</p>
+                                        <p class="transaction-date">2 hours ago</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="transaction-item">
+                                <div class="transaction-info">
+                                    <div class="transaction-avatar" style="background: #10b981;">
+                                        <i class="fa-solid fa-user-plus" style="color: white; font-size: 0.8rem;"></i>
+                                    </div>
+                                    <div>
+                                        <p class="transaction-name">Added new user</p>
+                                        <p class="transaction-date">5 hours ago</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="transaction-item">
+                                <div class="transaction-info">
+                                    <div class="transaction-avatar" style="background: #ff9500;">
+                                        <i class="fa-solid fa-cube" style="color: white; font-size: 0.8rem;"></i>
+                                    </div>
+                                    <div>
+                                        <p class="transaction-name">Created new product</p>
+                                        <p class="transaction-date">1 day ago</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="copyright">© 2024 Liquid Glass Admin Template. All rights reserved.</p>
+            <p class="developer">
+                Developed with <i class="fa-solid fa-heart"></i> by 
+                <strong>
+                    <a href="https://www.linkedin.com/in/dexterity-wurayayi-967a64230" target="_blank" rel="noopener noreferrer" style="color: var(--text-primary); text-decoration: none; transition: var(--transition);">
+                        DexterWura
+                        <i class="fa-brands fa-linkedin" style="margin-left: 0.5rem; font-size: 0.85rem;"></i>
+                    </a>
+                </strong>
+            </p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+
