@@ -150,7 +150,10 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 
 ## 📧 Contact
 
-Your Name - [@yourusername](https://twitter.com/yourusername)
+Dexterity Wurayayi (DexterWura)
+
+- 🌐 [GitHub](https://github.com/Dexterwura)
+- 💼 [LinkedIn](https://www.linkedin.com/in/dexterity-wurayayi-967a64230)
 
 Project Link: [https://liquidglassadmin.github.io](https://liquidglassadmin.github.io)
 
