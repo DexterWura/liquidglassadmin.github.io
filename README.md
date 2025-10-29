@@ -5,6 +5,8 @@ A beautiful, modern admin dashboard template inspired by Apple's liquid glass (g
 ![Liquid Glass Admin Dashboard](https://img.shields.io/badge/Status-Active-success)
 ![License](https://img.shields.io/badge/License-MIT-blue)
 
+![Dashboard Preview](assets/images/dash.png)
+
 ## ✨ Features
 
 - 🎨 **Liquid Glass Design** - Beautiful glassmorphism UI inspired by Apple's design language
