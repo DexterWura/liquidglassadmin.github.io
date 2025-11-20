@@ -1,58 +1,160 @@
 // Liquid Glass Admin Dashboard - JavaScript
 
+// Page load animation
+window.addEventListener('load', function() {
+    document.body.classList.remove('loading');
+    document.body.classList.add('loaded');
+    
+    // Trigger animations for cards
+    const cards = document.querySelectorAll('.stat-card, .chart-card, .info-card');
+    cards.forEach((card, index) => {
+        setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+        }, index * 50);
+    });
+});
+
+// Initialize on DOM ready
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu toggle
+    // Add loading class initially
+    document.body.classList.add('loading');
+    
+    // Mobile menu toggle with improved UX
     const menuToggle = document.getElementById('menuToggle');
     const sidebar = document.querySelector('.sidebar');
     
     if (menuToggle && sidebar) {
+        // Prevent body scroll when sidebar is open
+        const toggleSidebar = (open) => {
+            if (open) {
+                sidebar.classList.add('open');
+                document.body.classList.add('sidebar-open');
+                // Prevent scroll on body
+                document.body.style.overflow = 'hidden';
+            } else {
+                sidebar.classList.remove('open');
+                document.body.classList.remove('sidebar-open');
+                document.body.style.overflow = '';
+            }
+        };
+
         menuToggle.addEventListener('click', function(e) {
             e.stopPropagation();
-            sidebar.classList.toggle('open');
-            document.body.classList.toggle('sidebar-open');
+            const isOpen = sidebar.classList.contains('open');
+            toggleSidebar(!isOpen);
         });
 
-        // Close sidebar when clicking outside on mobile
-        document.addEventListener('click', function(event) {
-            if (window.innerWidth <= 767) {
+        // Close sidebar when clicking outside on mobile/tablet
+        const handleOutsideClick = (event) => {
+            if (window.innerWidth <= 1199) {
                 if (sidebar.classList.contains('open')) {
                     if (!sidebar.contains(event.target) && !menuToggle.contains(event.target)) {
-                        sidebar.classList.remove('open');
-                        document.body.classList.remove('sidebar-open');
+                        toggleSidebar(false);
                     }
                 }
             }
-        });
+        };
+
+        // Use passive listener for better performance
+        document.addEventListener('click', handleOutsideClick, { passive: true });
 
         // Close sidebar on window resize if it becomes desktop size
+        let resizeTimer;
         window.addEventListener('resize', function() {
-            if (window.innerWidth > 767) {
-                sidebar.classList.remove('open');
-                document.body.classList.remove('sidebar-open');
-            }
-        });
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(() => {
+                if (window.innerWidth > 1199) {
+                    toggleSidebar(false);
+                }
+            }, 150);
+        }, { passive: true });
 
-        // Close sidebar when clicking nav items on mobile
+        // Close sidebar when clicking nav items on mobile/tablet
         const navItems = document.querySelectorAll('.nav-item');
         navItems.forEach(item => {
             item.addEventListener('click', function() {
-                if (window.innerWidth <= 767) {
-                    sidebar.classList.remove('open');
-                    document.body.classList.remove('sidebar-open');
+                if (window.innerWidth <= 1199) {
+                    toggleSidebar(false);
                 }
-            });
+            }, { passive: true });
         });
+        
+        // Mobile search bar toggle - camelClone pattern
+        const searchBarToggle = document.querySelector('.search-bar-toggle');
+        const searchBox = document.querySelector('.search-box');
+        
+        if (searchBarToggle && searchBox) {
+            searchBarToggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                searchBox.classList.toggle('search-bar-show');
+            }, { passive: false });
+            
+            // Close search bar when clicking outside
+            document.addEventListener('click', function(event) {
+                if (window.innerWidth <= 1199) {
+                    if (searchBox.classList.contains('search-bar-show')) {
+                        if (!searchBox.contains(event.target) && !searchBarToggle.contains(event.target)) {
+                            searchBox.classList.remove('search-bar-show');
+                        }
+                    }
+                }
+            }, { passive: true });
+        }
     }
 
-    // Chart controls
+    // Chart controls with smooth transitions
     const chartButtons = document.querySelectorAll('.chart-btn');
     chartButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            chartButtons.forEach(btn => btn.classList.remove('active'));
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            chartButtons.forEach(btn => {
+                btn.classList.remove('active');
+                btn.setAttribute('aria-pressed', 'false');
+            });
             this.classList.add('active');
+            this.setAttribute('aria-pressed', 'true');
+            
+            // Add ripple effect
+            const ripple = document.createElement('span');
+            ripple.style.cssText = `
+                position: absolute;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.6);
+                transform: scale(0);
+                animation: ripple 0.6s ease-out;
+                pointer-events: none;
+                width: 20px;
+                height: 20px;
+                left: 50%;
+                top: 50%;
+                margin-left: -10px;
+                margin-top: -10px;
+            `;
+            this.style.position = 'relative';
+            this.style.overflow = 'hidden';
+            this.appendChild(ripple);
+            
+            setTimeout(() => ripple.remove(), 600);
+            
             // Here you would update the chart data based on the selected period
-        });
+        }, { passive: false });
     });
+    
+    // Add ripple animation to CSS dynamically
+    if (!document.getElementById('ripple-animation')) {
+        const style = document.createElement('style');
+        style.id = 'ripple-animation';
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    }
 
     // Initialize Charts
     initRevenueChart();
@@ -302,81 +404,231 @@ function initTrafficChart() {
     });
 }
 
-// Animate progress bars on scroll
-const observerOptions = {
-    threshold: 0.5,
+// Animate progress bars on scroll with improved performance
+const progressObserverOptions = {
+    threshold: 0.3,
     rootMargin: '0px'
 };
 
-const progressObserver = new IntersectionObserver(function(entries) {
+const progressObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && !entry.target.dataset.animated) {
+            entry.target.dataset.animated = 'true';
             const progressFill = entry.target.querySelector('.progress-fill');
             if (progressFill) {
-                const width = progressFill.style.width;
+                const width = progressFill.style.width || progressFill.getAttribute('data-width') || '0%';
+                progressFill.setAttribute('data-width', width);
                 progressFill.style.width = '0%';
-                setTimeout(() => {
-                    progressFill.style.width = width;
-                }, 100);
+                progressFill.style.opacity = '0';
+                
+                // Use requestAnimationFrame for smooth animation
+                requestAnimationFrame(() => {
+                    setTimeout(() => {
+                        progressFill.style.transition = 'width 0.8s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.3s ease';
+                        progressFill.style.width = width;
+                        progressFill.style.opacity = '1';
+                    }, 150);
+                });
             }
         }
     });
-}, observerOptions);
+}, progressObserverOptions);
 
+// Observe all product items
 document.querySelectorAll('.product-item').forEach(item => {
     progressObserver.observe(item);
 });
 
-// Smooth scroll for anchor links
+// Performance optimization: Debounce scroll events
+let scrollTimeout;
+const optimizedScrollHandler = () => {
+    if (scrollTimeout) {
+        cancelAnimationFrame(scrollTimeout);
+    }
+    scrollTimeout = requestAnimationFrame(() => {
+        // Any scroll-based calculations here
+    });
+};
+
+window.addEventListener('scroll', optimizedScrollHandler, { passive: true });
+
+// Smooth scroll for anchor links with offset
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+        if (href === '#') return;
+        
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const target = document.querySelector(href);
         if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
+            const offset = 80; // Account for fixed headers
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+            
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
             });
         }
-    });
+    }, { passive: false });
 });
 
-// Update stats animation
+// Smooth scroll to top functionality
+const scrollToTop = () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+};
+
+// Add scroll to top button (optional enhancement)
+const addScrollToTop = () => {
+    const button = document.createElement('button');
+    button.innerHTML = '<i class="fa-solid fa-arrow-up"></i>';
+    button.className = 'scroll-to-top';
+    button.style.cssText = `
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: var(--primary-color);
+        color: white;
+        border: none;
+        cursor: pointer;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
+        z-index: 999;
+        transition: all 0.3s ease;
+        opacity: 0;
+        transform: translateY(20px);
+    `;
+    button.setAttribute('aria-label', 'Scroll to top');
+    document.body.appendChild(button);
+    
+    let ticking = false;
+    const handleScroll = () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                const scrollY = window.scrollY || window.pageYOffset;
+                if (scrollY > 300) {
+                    button.style.display = 'flex';
+                    setTimeout(() => {
+                        button.style.opacity = '1';
+                        button.style.transform = 'translateY(0)';
+                    }, 10);
+                } else {
+                    button.style.opacity = '0';
+                    button.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        if (window.scrollY < 300) {
+                            button.style.display = 'none';
+                        }
+                    }, 300);
+                }
+                ticking = false;
+            });
+            ticking = true;
+        }
+    };
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    button.addEventListener('click', scrollToTop);
+    
+    button.addEventListener('mouseenter', () => {
+        button.style.transform = 'translateY(-4px) scale(1.1)';
+        button.style.boxShadow = '0 6px 20px rgba(0, 122, 255, 0.4)';
+    });
+    
+    button.addEventListener('mouseleave', () => {
+        button.style.transform = 'translateY(0) scale(1)';
+        button.style.boxShadow = '0 4px 12px rgba(0, 122, 255, 0.3)';
+    });
+};
+
+// Initialize scroll to top button
+addScrollToTop();
+
+// Update stats animation with easing
 function animateValue(element, start, end, duration) {
     let startTimestamp = null;
+    
+    // Easing function for smooth animation
+    const easeOutCubic = (t) => {
+        return 1 - Math.pow(1 - t, 3);
+    };
+    
     const step = (timestamp) => {
         if (!startTimestamp) startTimestamp = timestamp;
-        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-        const current = Math.floor(progress * (end - start) + start);
+        const elapsed = timestamp - startTimestamp;
+        const progress = Math.min(elapsed / duration, 1);
+        const easedProgress = easeOutCubic(progress);
+        const current = Math.floor(easedProgress * (end - start) + start);
         
-        if (element.textContent.includes('$')) {
+        const originalText = element.dataset.originalText || element.textContent;
+        const hasDollar = originalText.includes('$');
+        const hasPercent = originalText.includes('%');
+        
+        if (hasDollar) {
             element.textContent = '$' + current.toLocaleString();
-        } else if (element.textContent.includes('%')) {
-            element.textContent = (progress * (end - start) + start).toFixed(2) + '%';
+        } else if (hasPercent) {
+            const decimalValue = (easedProgress * (end - start) + start).toFixed(2);
+            element.textContent = decimalValue + '%';
         } else {
             element.textContent = current.toLocaleString();
         }
         
         if (progress < 1) {
             window.requestAnimationFrame(step);
+        } else {
+            // Ensure final value is set correctly
+            if (hasDollar) {
+                element.textContent = '$' + end.toLocaleString();
+            } else if (hasPercent) {
+                element.textContent = end.toFixed(2) + '%';
+            } else {
+                element.textContent = end.toLocaleString();
+            }
         }
     };
     window.requestAnimationFrame(step);
 }
 
-// Animate stat values on load
-const statValues = document.querySelectorAll('.stat-value');
-statValues.forEach(stat => {
-    const finalValue = stat.textContent;
-    let numericValue = parseFloat(finalValue.replace(/[^0-9.]/g, ''));
+// Animate stat values on scroll into view
+const animateStatsOnScroll = () => {
+    const statValues = document.querySelectorAll('.stat-value');
+    const observerOptions = {
+        threshold: 0.5,
+        rootMargin: '0px'
+    };
     
-    if (!isNaN(numericValue)) {
-        stat.textContent = '0';
-        setTimeout(() => {
-            animateValue(stat, 0, numericValue, 1500);
-        }, 500);
-    }
-});
+    const statObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !entry.target.dataset.animated) {
+                entry.target.dataset.animated = 'true';
+                const finalValue = entry.target.textContent;
+                entry.target.dataset.originalText = finalValue;
+                let numericValue = parseFloat(finalValue.replace(/[^0-9.]/g, ''));
+                
+                if (!isNaN(numericValue)) {
+                    entry.target.textContent = '0';
+                    setTimeout(() => {
+                        animateValue(entry.target, 0, numericValue, 2000);
+                    }, 200);
+                }
+            }
+        });
+    }, observerOptions);
+    
+    statValues.forEach(stat => {
+        statObserver.observe(stat);
+    });
+};
+
+// Initialize stat animations
+animateStatsOnScroll();
 
 // Sales Pie Chart
 function initSalesPieChart() {

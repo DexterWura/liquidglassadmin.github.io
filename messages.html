@@ -52,6 +52,10 @@
                 <i class="fa-solid fa-file-lines nav-icon"></i>
                 <span>Reports</span>
             </a>
+            <a href="tables.html" class="nav-item">
+                <i class="fa-solid fa-table nav-icon"></i>
+                <span>Tables</span>
+            </a>
             <a href="profile.html" class="nav-item">
                 <i class="fa-solid fa-user nav-icon"></i>
                 <span>Profile</span>
@@ -65,7 +69,7 @@
                 <span>Settings</span>
             </a>
         </nav>
-        <div class="sidebar-version">v0.01</div>
+        <div class="sidebar-version">v0.5</div>
     </aside>
 
     <!-- Main Content -->
@@ -114,9 +118,9 @@
 
         <!-- Messages Content -->
         <div class="dashboard-content">
-            <section class="additional-cards" style="grid-template-columns: 350px 1fr; gap: 1.5rem;">
+            <section class="additional-cards messages-layout" style="grid-template-columns: 350px 1fr; gap: 1.5rem;">
                 <!-- Messages List -->
-                <div class="info-card">
+                <div class="info-card messages-list">
                     <div class="card-header">
                         <h3>Conversations</h3>
                         <div style="position: relative; width: 30px; height: 30px;">
@@ -178,7 +182,7 @@
                 </div>
 
                 <!-- Chat Window -->
-                <div class="info-card" style="display: flex; flex-direction: column;">
+                <div class="info-card chat-window" style="display: flex; flex-direction: column;">
                     <div class="card-header" style="border-bottom: 1px solid var(--glass-border); padding-bottom: 1rem;">
                         <div style="display: flex; align-items: center; gap: 1rem;">
                             <img src="https://ui-avatars.com/api/?name=John+Doe&background=007aff" alt="User" style="width: 45px; height: 45px; border-radius: 50%;">
