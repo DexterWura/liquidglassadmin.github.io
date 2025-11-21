@@ -1,5 +1,3 @@
-// Liquid Glass Admin Dashboard - JavaScript
-
 window.addEventListener('load', function() {
     document.body.classList.remove('loading');
     document.body.classList.add('loaded');
@@ -424,7 +422,6 @@ const optimizedScrollHandler = () => {
         cancelAnimationFrame(scrollTimeout);
     }
     scrollTimeout = requestAnimationFrame(() => {
-        // Any scroll-based calculations here
     });
 };
 

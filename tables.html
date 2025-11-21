@@ -11,7 +11,7 @@
     <!-- Sidebar Navigation -->
     <aside class="sidebar">
         <div class="sidebar-header">
-            <a href="index.html" style="text-decoration: none; color: inherit;">
+            <a href="index.html" class="logo-link">
                 <h1 class="logo">Liquid Glass</h1>
             </a>
         </div>
@@ -95,7 +95,7 @@
                 <h2 class="page-title">Tables</h2>
             </div>
             <div class="top-bar-right">
-                <button class="search-bar-toggle" style="display: none; background: none; border: none; color: var(--text-primary); cursor: pointer; padding: 0.75rem; border-radius: 8px; transition: var(--transition-fast); min-width: var(--touch-target); min-height: var(--touch-target); align-items: center; justify-content: center;" aria-label="Toggle search">
+                <button class="search-bar-toggle" aria-label="Toggle search">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
                 <div class="search-box">
@@ -131,7 +131,7 @@
         <!-- Tables Content -->
         <div class="dashboard-content">
             <!-- Basic Table -->
-            <section class="additional-cards" style="grid-template-columns: 1fr;">
+            <section class="additional-cards single-column">
                 <div class="info-card">
                     <div class="card-header">
                         <h3>Basic Table</h3>
@@ -183,7 +183,7 @@
             </section>
 
             <!-- Bordered Table -->
-            <section class="additional-cards" style="grid-template-columns: 1fr;">
+            <section class="additional-cards single-column">
                 <div class="info-card">
                     <div class="card-header">
                         <h3>Bordered Table</h3>
@@ -235,7 +235,7 @@
             </section>
 
             <!-- Striped Table -->
-            <section class="additional-cards" style="grid-template-columns: 1fr;">
+            <section class="additional-cards single-column">
                 <div class="info-card">
                     <div class="card-header">
                         <h3>Striped Table</h3>
@@ -287,7 +287,7 @@
             </section>
 
             <!-- Hoverable Table -->
-            <section class="additional-cards" style="grid-template-columns: 1fr;">
+            <section class="additional-cards single-column">
                 <div class="info-card">
                     <div class="card-header">
                         <h3>Hoverable Table</h3>
@@ -308,10 +308,10 @@
                                     <td>Website Redesign</td>
                                     <td>Design Team</td>
                                     <td>
-                                        <div class="progress-bar" style="width: 100%;">
-                                            <div class="progress-fill" style="width: 85%;"></div>
+                                        <div class="progress-bar progress-bar-full">
+                                            <div class="progress-fill progress-fill-85"></div>
                                         </div>
-                                        <span style="font-size: 0.85rem; color: var(--text-secondary);">85%</span>
+                                        <span class="progress-text">85%</span>
                                     </td>
                                     <td>2024-02-01</td>
                                     <td>
@@ -327,10 +327,10 @@
                                     <td>Mobile App</td>
                                     <td>Dev Team</td>
                                     <td>
-                                        <div class="progress-bar" style="width: 100%;">
-                                            <div class="progress-fill" style="width: 60%;"></div>
+                                        <div class="progress-bar progress-bar-full">
+                                            <div class="progress-fill progress-fill-60"></div>
                                         </div>
-                                        <span style="font-size: 0.85rem; color: var(--text-secondary);">60%</span>
+                                        <span class="progress-text">60%</span>
                                     </td>
                                     <td>2024-02-15</td>
                                     <td>
@@ -346,10 +346,10 @@
                                     <td>API Integration</td>
                                     <td>Backend Team</td>
                                     <td>
-                                        <div class="progress-bar" style="width: 100%;">
-                                            <div class="progress-fill" style="width: 40%;"></div>
+                                        <div class="progress-bar progress-bar-full">
+                                            <div class="progress-fill progress-fill-40"></div>
                                         </div>
-                                        <span style="font-size: 0.85rem; color: var(--text-secondary);">40%</span>
+                                        <span class="progress-text">40%</span>
                                     </td>
                                     <td>2024-03-01</td>
                                     <td>
@@ -368,7 +368,7 @@
             </section>
 
             <!-- Table with Images -->
-            <section class="additional-cards" style="grid-template-columns: 1fr;">
+            <section class="additional-cards single-column">
                 <div class="info-card">
                     <div class="card-header">
                         <h3>Table with Images</h3>
@@ -394,9 +394,9 @@
                                     <td>Widgets</td>
                                     <td>$49.99</td>
                                     <td>
-                                        <div style="display: flex; align-items: center; gap: 0.25rem;">
-                                            <i class="fa-solid fa-star" style="color: #ffc107; font-size: 0.85rem;"></i>
-                                            <span style="font-size: 0.9rem;">4.5</span>
+                                        <div class="rating-display">
+                                            <i class="fa-solid fa-star rating-star"></i>
+                                            <span class="rating-value">4.5</span>
                                         </div>
                                     </td>
                                     <td>
@@ -416,9 +416,9 @@
                                     <td>Gadgets</td>
                                     <td>$79.99</td>
                                     <td>
-                                        <div style="display: flex; align-items: center; gap: 0.25rem;">
-                                            <i class="fa-solid fa-star" style="color: #ffc107; font-size: 0.85rem;"></i>
-                                            <span style="font-size: 0.9rem;">4.8</span>
+                                        <div class="rating-display">
+                                            <i class="fa-solid fa-star rating-star"></i>
+                                            <span class="rating-value">4.8</span>
                                         </div>
                                     </td>
                                     <td>
@@ -438,9 +438,9 @@
                                     <td>Tools</td>
                                     <td>$129.99</td>
                                     <td>
-                                        <div style="display: flex; align-items: center; gap: 0.25rem;">
-                                            <i class="fa-solid fa-star" style="color: #ffc107; font-size: 0.85rem;"></i>
-                                            <span style="font-size: 0.9rem;">5.0</span>
+                                        <div class="rating-display">
+                                            <i class="fa-solid fa-star rating-star"></i>
+                                            <span class="rating-value">5.0</span>
                                         </div>
                                     </td>
                                     <td>
@@ -459,7 +459,7 @@
             </section>
 
             <!-- Compact Table -->
-            <section class="additional-cards" style="grid-template-columns: 1fr;">
+            <section class="additional-cards single-column">
                 <div class="info-card">
                     <div class="card-header">
                         <h3>Compact Table</h3>
@@ -479,25 +479,25 @@
                                     <td>AAPL</td>
                                     <td>Apple Inc.</td>
                                     <td>$175.50</td>
-                                    <td><span style="color: #10b981;">+2.5%</span></td>
+                                    <td><span class="text-success">+2.5%</span></td>
                                 </tr>
                                 <tr>
                                     <td>GOOGL</td>
                                     <td>Alphabet Inc.</td>
                                     <td>$142.30</td>
-                                    <td><span style="color: #ef4444;">-1.2%</span></td>
+                                    <td><span class="text-danger">-1.2%</span></td>
                                 </tr>
                                 <tr>
                                     <td>MSFT</td>
                                     <td>Microsoft Corp.</td>
                                     <td>$378.90</td>
-                                    <td><span style="color: #10b981;">+0.8%</span></td>
+                                    <td><span class="text-success">+0.8%</span></td>
                                 </tr>
                                 <tr>
                                     <td>AMZN</td>
                                     <td>Amazon.com Inc.</td>
                                     <td>$145.20</td>
-                                    <td><span style="color: #10b981;">+1.5%</span></td>
+                                    <td><span class="text-success">+1.5%</span></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -506,18 +506,18 @@
             </section>
 
             <!-- Table with Filters -->
-            <section class="additional-cards" style="grid-template-columns: 1fr;">
+            <section class="additional-cards single-column">
                 <div class="info-card">
                     <div class="card-header">
                         <h3>Table with Filters</h3>
-                        <div style="display: flex; gap: 0.5rem; align-items: center;">
-                            <select style="background: rgba(0, 0, 0, 0.04); border: 1px solid var(--glass-border); border-radius: 8px; padding: 0.5rem 1rem; color: var(--text-primary); font-size: 0.9rem; cursor: pointer;">
+                        <div class="filter-controls">
+                            <select class="filter-select">
                                 <option>All Status</option>
                                 <option>Active</option>
                                 <option>Inactive</option>
                                 <option>Pending</option>
                             </select>
-                            <button style="padding: 0.5rem 1rem; background: var(--primary-color); color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 0.9rem;">
+                            <button class="filter-btn">
                                 <i class="fa-solid fa-filter"></i> Filter
                             </button>
                         </div>
@@ -577,9 +577,9 @@
             <p class="developer">
                 Developed with <i class="fa-solid fa-heart"></i> by 
                 <strong>
-                    <a href="https://www.linkedin.com/in/dexterity-wurayayi-967a64230" target="_blank" rel="noopener noreferrer" style="color: var(--text-primary); text-decoration: none; transition: var(--transition);">
+                    <a href="https://www.linkedin.com/in/dexterity-wurayayi-967a64230" target="_blank" rel="noopener noreferrer" class="developer-link">
                         DexterWura
-                        <i class="fa-brands fa-linkedin" style="margin-left: 0.5rem; font-size: 0.85rem;"></i>
+                        <i class="fa-brands fa-linkedin developer-link-icon"></i>
                     </a>
                 </strong>
             </p>

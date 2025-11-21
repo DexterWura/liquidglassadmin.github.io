@@ -12,7 +12,7 @@
     <!-- Sidebar Navigation -->
     <aside class="sidebar">
         <div class="sidebar-header">
-            <a href="index.html" style="text-decoration: none; color: inherit;">
+            <a href="index.html" class="logo-link">
                 <h1 class="logo">Liquid Glass</h1>
             </a>
         </div>
@@ -96,7 +96,7 @@
                 <h2 class="page-title">Dashboard</h2>
             </div>
             <div class="top-bar-right">
-                <button class="search-bar-toggle" style="display: none; background: none; border: none; color: var(--text-primary); cursor: pointer; padding: 0.75rem; border-radius: 8px; transition: var(--transition-fast); min-width: var(--touch-target); min-height: var(--touch-target); align-items: center; justify-content: center;" aria-label="Toggle search">
+                <button class="search-bar-toggle" aria-label="Toggle search">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
                 <div class="search-box">
@@ -309,7 +309,7 @@
                             </div>
                             <div class="product-progress">
                                 <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 85%"></div>
+                                    <div class="progress-fill progress-fill-85"></div>
                                 </div>
                                 <span class="progress-value">85%</span>
                             </div>
@@ -324,7 +324,7 @@
                             </div>
                             <div class="product-progress">
                                 <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 68%"></div>
+                                    <div class="progress-fill progress-fill-68"></div>
                                 </div>
                                 <span class="progress-value">68%</span>
                             </div>
@@ -339,7 +339,7 @@
                             </div>
                             <div class="product-progress">
                                 <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 45%"></div>
+                                    <div class="progress-fill progress-fill-45"></div>
                                 </div>
                                 <span class="progress-value">45%</span>
                             </div>
@@ -354,7 +354,7 @@
                             </div>
                             <div class="product-progress">
                                 <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 32%"></div>
+                                    <div class="progress-fill progress-fill-32"></div>
                                 </div>
                                 <span class="progress-value">32%</span>
                             </div>
@@ -378,22 +378,22 @@
                     <div class="card-header">
                         <h3>Quick Actions</h3>
                     </div>
-                    <div class="card-body" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 1rem;">
-                        <button style="padding: 1.25rem; background: rgba(0, 122, 255, 0.1); border: 1px solid rgba(0, 122, 255, 0.2); border-radius: 12px; cursor: pointer; transition: var(--transition); display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
-                            <i class="fa-solid fa-user-plus" style="font-size: 1.5rem; color: #007aff;"></i>
-                            <span style="font-size: 0.85rem; color: var(--text-primary); font-weight: 500;">Add User</span>
+                    <div class="card-body quick-action-grid">
+                        <button class="quick-action-btn quick-action-btn-primary">
+                            <i class="fa-solid fa-user-plus"></i>
+                            <span class="quick-action-label">Add User</span>
                         </button>
-                        <button style="padding: 1.25rem; background: rgba(139, 92, 246, 0.1); border: 1px solid rgba(139, 92, 246, 0.2); border-radius: 12px; cursor: pointer; transition: var(--transition); display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
-                            <i class="fa-solid fa-cube" style="font-size: 1.5rem; color: #5856d6;"></i>
-                            <span style="font-size: 0.85rem; color: var(--text-primary); font-weight: 500;">New Product</span>
+                        <button class="quick-action-btn quick-action-btn-purple">
+                            <i class="fa-solid fa-cube"></i>
+                            <span class="quick-action-label">New Product</span>
                         </button>
-                        <button style="padding: 1.25rem; background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.2); border-radius: 12px; cursor: pointer; transition: var(--transition); display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
-                            <i class="fa-solid fa-file-export" style="font-size: 1.5rem; color: #10b981;"></i>
-                            <span style="font-size: 0.85rem; color: var(--text-primary); font-weight: 500;">Export Data</span>
+                        <button class="quick-action-btn quick-action-btn-success">
+                            <i class="fa-solid fa-file-export"></i>
+                            <span class="quick-action-label">Export Data</span>
                         </button>
-                        <button style="padding: 1.25rem; background: rgba(255, 45, 85, 0.1); border: 1px solid rgba(255, 45, 85, 0.2); border-radius: 12px; cursor: pointer; transition: var(--transition); display: flex; flex-direction: column; align-items: center; gap: 0.5rem;">
-                            <i class="fa-solid fa-chart-pie" style="font-size: 1.5rem; color: #ff2d55;"></i>
-                            <span style="font-size: 0.85rem; color: var(--text-primary); font-weight: 500;">View Reports</span>
+                        <button class="quick-action-btn quick-action-btn-danger">
+                            <i class="fa-solid fa-chart-pie"></i>
+                            <span class="quick-action-label">View Reports</span>
                         </button>
                     </div>
                 </div>
@@ -406,8 +406,8 @@
                     <div class="card-body">
                         <div class="transaction-item">
                             <div class="transaction-info">
-                                <div class="transaction-avatar" style="background: #007aff;">
-                                    <i class="fa-solid fa-user-plus" style="color: white; font-size: 0.8rem;"></i>
+                                <div class="transaction-avatar transaction-avatar-primary">
+                                    <i class="fa-solid fa-user-plus transaction-avatar-icon"></i>
                                 </div>
                                 <div>
                                     <p class="transaction-name">New user registered</p>
@@ -417,8 +417,8 @@
                         </div>
                         <div class="transaction-item">
                             <div class="transaction-info">
-                                <div class="transaction-avatar" style="background: #10b981;">
-                                    <i class="fa-solid fa-check" style="color: white; font-size: 0.8rem;"></i>
+                                <div class="transaction-avatar transaction-avatar-success">
+                                    <i class="fa-solid fa-check transaction-avatar-icon"></i>
                                 </div>
                                 <div>
                                     <p class="transaction-name">Order #1234 completed</p>
@@ -428,8 +428,8 @@
                         </div>
                         <div class="transaction-item">
                             <div class="transaction-info">
-                                <div class="transaction-avatar" style="background: #ff9500;">
-                                    <i class="fa-solid fa-envelope" style="color: white; font-size: 0.8rem;"></i>
+                                <div class="transaction-avatar transaction-avatar-warning">
+                                    <i class="fa-solid fa-envelope transaction-avatar-icon"></i>
                                 </div>
                                 <div>
                                     <p class="transaction-name">New message received</p>
@@ -439,8 +439,8 @@
                         </div>
                         <div class="transaction-item">
                             <div class="transaction-info">
-                                <div class="transaction-avatar" style="background: #af52de;">
-                                    <i class="fa-solid fa-star" style="color: white; font-size: 0.8rem;"></i>
+                                <div class="transaction-avatar transaction-avatar-purple">
+                                    <i class="fa-solid fa-star transaction-avatar-icon"></i>
                                 </div>
                                 <div>
                                     <p class="transaction-name">Product review added</p>
@@ -456,26 +456,26 @@
                         <h3>System Status</h3>
                     </div>
                     <div class="card-body">
-                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: rgba(0, 0, 0, 0.02); border-radius: 12px; margin-bottom: 0.75rem;">
-                            <div>
-                                <p style="margin: 0 0 0.25rem 0; font-weight: 500; color: var(--text-primary);">Server Status</p>
-                                <p style="margin: 0; font-size: 0.85rem; color: var(--text-tertiary);">Uptime: 99.9%</p>
+                        <div class="system-status-item">
+                            <div class="system-status-info">
+                                <p class="system-status-title">Server Status</p>
+                                <p class="system-status-desc">Uptime: 99.9%</p>
                             </div>
-                            <span style="padding: 0.25rem 0.75rem; background: rgba(16, 185, 129, 0.1); color: #10b981; border-radius: 12px; font-size: 0.85rem; font-weight: 500;">Online</span>
+                            <span class="system-status-badge">Online</span>
                         </div>
-                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: rgba(0, 0, 0, 0.02); border-radius: 12px; margin-bottom: 0.75rem;">
-                            <div>
-                                <p style="margin: 0 0 0.25rem 0; font-weight: 500; color: var(--text-primary);">Database</p>
-                                <p style="margin: 0; font-size: 0.85rem; color: var(--text-tertiary);">Connections: 234</p>
+                        <div class="system-status-item">
+                            <div class="system-status-info">
+                                <p class="system-status-title">Database</p>
+                                <p class="system-status-desc">Connections: 234</p>
                             </div>
-                            <span style="padding: 0.25rem 0.75rem; background: rgba(16, 185, 129, 0.1); color: #10b981; border-radius: 12px; font-size: 0.85rem; font-weight: 500;">Healthy</span>
+                            <span class="system-status-badge">Healthy</span>
                         </div>
-                        <div style="display: flex; justify-content: space-between; align-items: center; padding: 1rem; background: rgba(0, 0, 0, 0.02); border-radius: 12px;">
-                            <div>
-                                <p style="margin: 0 0 0.25rem 0; font-weight: 500; color: var(--text-primary);">API Performance</p>
-                                <p style="margin: 0; font-size: 0.85rem; color: var(--text-tertiary);">Avg. Response: 120ms</p>
+                        <div class="system-status-item">
+                            <div class="system-status-info">
+                                <p class="system-status-title">API Performance</p>
+                                <p class="system-status-desc">Avg. Response: 120ms</p>
                             </div>
-                            <span style="padding: 0.25rem 0.75rem; background: rgba(16, 185, 129, 0.1); color: #10b981; border-radius: 12px; font-size: 0.85rem; font-weight: 500;">Good</span>
+                            <span class="system-status-badge">Good</span>
                         </div>
                     </div>
                 </div>
@@ -490,9 +490,9 @@
             <p class="developer">
                 Developed with <i class="fa-solid fa-heart"></i> by 
                 <strong>
-                    <a href="https://www.linkedin.com/in/dexterity-wurayayi-967a64230" target="_blank" rel="noopener noreferrer" style="color: var(--text-primary); text-decoration: none; transition: var(--transition);">
+                    <a href="https://www.linkedin.com/in/dexterity-wurayayi-967a64230" target="_blank" rel="noopener noreferrer" class="developer-link">
                         DexterWura
-                        <i class="fa-brands fa-linkedin" style="margin-left: 0.5rem; font-size: 0.85rem;"></i>
+                        <i class="fa-brands fa-linkedin developer-link-icon"></i>
                     </a>
                 </strong>
             </p>
