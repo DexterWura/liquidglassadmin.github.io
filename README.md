@@ -53,6 +53,7 @@ liquid-glass-admin-template/
 ├── users.html              # Users management page
 ├── products.html           # Products page
 ├── orders.html             # Orders page
+├── pos.html                # Point of Sale page
 ├── messages.html           # Messages page
 ├── notifications.html      # Notifications page
 ├── calendar.html           # Calendar page
@@ -262,9 +263,28 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 
 ## 📝 Version History
 
-### Version 1.0.0 (Current)
+### Version 1.0.1 (Current)
 
-**Initial Release** - November 2025
+**Update** - November 2025
+
+#### Features Added:
+- 🛒 **Point of Sale (POS) System**
+  - Complete POS interface with product grid
+  - Shopping cart functionality
+  - Zimbabwean product catalog (sugar, salt, cooking oil, maize meal, rice, flour, tea, coffee, soap, detergent, bread, milk)
+  - Product images from internet sources
+  - Responsive POS layout for mobile and desktop
+  - Checkout and payment options
+
+#### Improvements:
+- Updated copyright year to display current year dynamically
+- Fixed calendar visibility on mobile devices
+- Fixed hamburger menu toggle on analytics page
+- Improved code organization and removed unnecessary comments
+
+### Version 1.0.0
+
+**Initial Release** - October 2025
 
 #### Features Added:
 - ✨ **Complete Dashboard System**
