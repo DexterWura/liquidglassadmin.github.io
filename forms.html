@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms - Liquid Glass Admin Dashboard</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" style="text-decoration: none; color: inherit;">
+                <h1 class="logo">Liquid Glass</h1>
+            </a>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <i class="fa-solid fa-house nav-icon"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="analytics.html" class="nav-item">
+                <i class="fa-solid fa-chart-line nav-icon"></i>
+                <span>Analytics</span>
+            </a>
+            <a href="users.html" class="nav-item">
+                <i class="fa-solid fa-users nav-icon"></i>
+                <span>Users</span>
+            </a>
+            <a href="products.html" class="nav-item">
+                <i class="fa-solid fa-cube nav-icon"></i>
+                <span>Products</span>
+            </a>
+            <a href="orders.html" class="nav-item">
+                <i class="fa-solid fa-shopping-bag nav-icon"></i>
+                <span>Orders</span>
+            </a>
+            <a href="messages.html" class="nav-item">
+                <i class="fa-solid fa-envelope nav-icon"></i>
+                <span>Messages</span>
+            </a>
+            <a href="notifications.html" class="nav-item">
+                <i class="fa-solid fa-bell nav-icon"></i>
+                <span>Notifications</span>
+            </a>
+            <a href="calendar.html" class="nav-item">
+                <i class="fa-solid fa-calendar nav-icon"></i>
+                <span>Calendar</span>
+            </a>
+            <a href="reports.html" class="nav-item">
+                <i class="fa-solid fa-file-lines nav-icon"></i>
+                <span>Reports</span>
+            </a>
+            <a href="tables.html" class="nav-item">
+                <i class="fa-solid fa-table nav-icon"></i>
+                <span>Tables</span>
+            </a>
+            <a href="forms.html" class="nav-item active">
+                <i class="fa-solid fa-file-pen nav-icon"></i>
+                <span>Forms</span>
+            </a>
+            <a href="buttons.html" class="nav-item">
+                <i class="fa-solid fa-hand-pointer nav-icon"></i>
+                <span>Buttons</span>
+            </a>
+            <a href="progress.html" class="nav-item">
+                <i class="fa-solid fa-bars-progress nav-icon"></i>
+                <span>Progress</span>
+            </a>
+            <a href="profile.html" class="nav-item">
+                <i class="fa-solid fa-user nav-icon"></i>
+                <span>Profile</span>
+            </a>
+            <a href="modals.html" class="nav-item">
+                <i class="fa-solid fa-window-maximize nav-icon"></i>
+                <span>Modals</span>
+            </a>
+            <a href="settings.html" class="nav-item">
+                <i class="fa-solid fa-gear nav-icon"></i>
+                <span>Settings</span>
+            </a>
+        </nav>
+        <div class="sidebar-version">v0.5</div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Bar -->
+        <header class="top-bar">
+            <div class="top-bar-left">
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <h2 class="page-title">Forms</h2>
+            </div>
+            <div class="top-bar-right">
+                <button class="search-bar-toggle" style="display: none; background: none; border: none; color: var(--text-primary); cursor: pointer; padding: 0.75rem; border-radius: 8px; transition: var(--transition-fast); min-width: var(--touch-target); min-height: var(--touch-target); align-items: center; justify-content: center;" aria-label="Toggle search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" placeholder="Search...">
+                </div>
+                <button class="notification-btn">
+                    <i class="fa-solid fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+                <div class="user-profile">
+                    <img src="https://ui-avatars.com/api/?name=Admin&background=random" alt="User" class="profile-img">
+                </div>
+            </div>
+        </header>
+
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumbs">
+            <a href="index.html">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+            <span class="breadcrumb-separator">
+                <i class="fa-solid fa-chevron-right"></i>
+            </span>
+            <a href="dashboard.html">Dashboard</a>
+            <span class="breadcrumb-separator">
+                <i class="fa-solid fa-chevron-right"></i>
+            </span>
+            <span class="breadcrumb-current">Forms</span>
+        </nav>
+
+        <!-- Forms Content -->
+        <div class="dashboard-content">
+            <!-- Text Inputs -->
+            <section class="additional-cards" style="grid-template-columns: 1fr;">
+                <div class="info-card">
+                    <div class="card-header">
+                        <h3>Text Inputs</h3>
+                    </div>
+                    <div class="card-body">
+                        <form class="form-section">
+                            <div class="form-group">
+                                <label class="form-label required" for="text-input">Text Input</label>
+                                <input type="text" id="text-input" class="form-input" placeholder="Enter text here">
+                                <div class="form-help">This is a standard text input field</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="text-disabled">Disabled Input</label>
+                                <input type="text" id="text-disabled" class="form-input" value="Disabled field" disabled>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="text-readonly">Readonly Input</label>
+                                <input type="text" id="text-readonly" class="form-input" value="Readonly field" readonly>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="text-success">Success State</label>
+                                <input type="text" id="text-success" class="form-input success" value="Valid input">
+                                <div class="form-help" style="color: #10b981;">This field is valid</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="text-error">Error State</label>
+                                <input type="text" id="text-error" class="form-input error" value="Invalid input">
+                                <div class="form-error">This field has an error</div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Input Types -->
+            <section class="additional-cards" style="grid-template-columns: 1fr;">
+                <div class="info-card">
+                    <div class="card-header">
+                        <h3>Input Types</h3>
+                    </div>
+                    <div class="card-body">
+                        <form class="form-section">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label required" for="email-input">Email</label>
+                                    <input type="email" id="email-input" class="form-input" placeholder="user@example.com">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label required" for="password-input">Password</label>
+                                    <input type="password" id="password-input" class="form-input" placeholder="Enter password">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="tel-input">Phone Number</label>
+                                    <input type="tel" id="tel-input" class="form-input" placeholder="+1 (555) 123-4567">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label" for="url-input">Website URL</label>
+                                    <input type="url" id="url-input" class="form-input" placeholder="https://example.com">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="number-input">Number</label>
+                                    <input type="number" id="number-input" class="form-input" placeholder="0" min="0" max="100">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label" for="search-input">Search</label>
+                                    <input type="search" id="search-input" class="form-input" placeholder="Search...">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="date-input">Date</label>
+                                    <input type="date" id="date-input" class="form-input">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label" for="time-input">Time</label>
+                                    <input type="time" id="time-input" class="form-input">
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="datetime-input">Date & Time</label>
+                                    <input type="datetime-local" id="datetime-input" class="form-input">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label" for="color-input">Color Picker</label>
+                                    <input type="color" id="color-input" class="form-input" value="#6366f1" style="height: 45px; cursor: pointer;">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Textarea -->
+            <section class="additional-cards" style="grid-template-columns: 1fr;">
+                <div class="info-card">
+                    <div class="card-header">
+                        <h3>Textarea</h3>
+                    </div>
+                    <div class="card-body">
+                        <form class="form-section">
+                            <div class="form-group">
+                                <label class="form-label required" for="textarea-default">Default Textarea</label>
+                                <textarea id="textarea-default" class="form-textarea" placeholder="Enter your message here..."></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="textarea-large">Large Textarea</label>
+                                <textarea id="textarea-large" class="form-textarea" rows="6" placeholder="Enter a longer message..."></textarea>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Select Dropdowns -->
+            <section class="additional-cards" style="grid-template-columns: 1fr;">
+                <div class="info-card">
+                    <div class="card-header">
+                        <h3>Select Dropdowns</h3>
+                    </div>
+                    <div class="card-body">
+                        <form class="form-section">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label required" for="select-default">Default Select</label>
+                                    <select id="select-default" class="form-select">
+                                        <option value="">Choose an option</option>
+                                        <option value="option1">Option 1</option>
+                                        <option value="option2">Option 2</option>
+                                        <option value="option3">Option 3</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label" for="select-multiple">Multiple Select</label>
+                                    <select id="select-multiple" class="form-select" multiple size="4">
+                                        <option value="option1">Option 1</option>
+                                        <option value="option2">Option 2</option>
+                                        <option value="option3">Option 3</option>
+                                        <option value="option4">Option 4</option>
+                                    </select>
+                                    <div class="form-help">Hold Ctrl (Cmd on Mac) to select multiple options</div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Checkboxes and Radio Buttons -->
+            <section class="additional-cards" style="grid-template-columns: 1fr;">
+                <div class="info-card">
+                    <div class="card-header">
+                        <h3>Checkboxes & Radio Buttons</h3>
+                    </div>
+                    <div class="card-body">
+                        <form class="form-section">
+                            <div class="form-group">
+                                <label class="form-label">Checkboxes</label>
+                                <div class="checkbox-group">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="checkbox1" checked>
+                                        <label for="checkbox1">Option 1 (Checked)</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="checkbox2">
+                                        <label for="checkbox2">Option 2</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="checkbox3">
+                                        <label for="checkbox3">Option 3</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="checkbox4" disabled>
+                                        <label for="checkbox4" style="opacity: 0.6;">Option 4 (Disabled)</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Radio Buttons</label>
+                                <div class="radio-group">
+                                    <div class="radio-item">
+                                        <input type="radio" id="radio1" name="radio-group" value="option1" checked>
+                                        <label for="radio1">Option 1 (Selected)</label>
+                                    </div>
+                                    <div class="radio-item">
+                                        <input type="radio" id="radio2" name="radio-group" value="option2">
+                                        <label for="radio2">Option 2</label>
+                                    </div>
+                                    <div class="radio-item">
+                                        <input type="radio" id="radio3" name="radio-group" value="option3">
+                                        <label for="radio3">Option 3</label>
+                                    </div>
+                                    <div class="radio-item">
+                                        <input type="radio" id="radio4" name="radio-group2" value="option4" disabled>
+                                        <label for="radio4" style="opacity: 0.6;">Option 4 (Disabled)</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Switches and Range -->
+            <section class="additional-cards" style="grid-template-columns: 1fr;">
+                <div class="info-card">
+                    <div class="card-header">
+                        <h3>Switches & Range Sliders</h3>
+                    </div>
+                    <div class="card-body">
+                        <form class="form-section">
+                            <div class="form-group">
+                                <label class="form-label">Toggle Switches</label>
+                                <div class="switch-group" style="flex-direction: column; align-items: flex-start; gap: 1.5rem;">
+                                    <div class="switch-item" style="display: flex; align-items: center; gap: 1rem;">
+                                        <label class="switch">
+                                            <input type="checkbox" checked>
+                                            <span class="slider"></span>
+                                        </label>
+                                        <span>Enable notifications (On)</span>
+                                    </div>
+                                    <div class="switch-item" style="display: flex; align-items: center; gap: 1rem;">
+                                        <label class="switch">
+                                            <input type="checkbox">
+                                            <span class="slider"></span>
+                                        </label>
+                                        <span>Enable dark mode (Off)</span>
+                                    </div>
+                                    <div class="switch-item" style="display: flex; align-items: center; gap: 1rem;">
+                                        <label class="switch">
+                                            <input type="checkbox" disabled>
+                                            <span class="slider"></span>
+                                        </label>
+                                        <span style="opacity: 0.6;">Disabled switch</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="range-input">Range Slider</label>
+                                <div class="range-group">
+                                    <input type="range" id="range-input" class="range-input" min="0" max="100" value="50">
+                                    <span class="range-value" id="range-value">50</span>
+                                </div>
+                                <div class="form-help">Current value: <span id="range-display">50</span></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Input Groups -->
+            <section class="additional-cards" style="grid-template-columns: 1fr;">
+                <div class="info-card">
+                    <div class="card-header">
+                        <h3>Input Groups</h3>
+                    </div>
+                    <div class="card-body">
+                        <form class="form-section">
+                            <div class="form-group">
+                                <label class="form-label">Input with Prefix</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <i class="fa-solid fa-user"></i>
+                                    </div>
+                                    <input type="text" class="form-input" placeholder="Username">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Input with Suffix</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-input" placeholder="Amount">
+                                    <div class="input-group-append">
+                                        <span>USD</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Input with Both</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <i class="fa-solid fa-dollar-sign"></i>
+                                    </div>
+                                    <input type="number" class="form-input" placeholder="0.00">
+                                    <div class="input-group-append">
+                                        <span>.00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- File Upload -->
+            <section class="additional-cards" style="grid-template-columns: 1fr;">
+                <div class="info-card">
+                    <div class="card-header">
+                        <h3>File Upload</h3>
+                    </div>
+                    <div class="card-body">
+                        <form class="form-section">
+                            <div class="form-group">
+                                <label class="form-label">File Upload</label>
+                                <div class="file-upload">
+                                    <input type="file" id="file-upload" multiple>
+                                    <label for="file-upload" class="file-upload-label">
+                                        <i class="fa-solid fa-cloud-arrow-up"></i>
+                                        <span>Click to upload or drag and drop</span>
+                                        <span style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.5rem;">PNG, JPG, GIF up to 10MB</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Image Upload</label>
+                                <div class="file-upload">
+                                    <input type="file" id="image-upload" accept="image/*">
+                                    <label for="image-upload" class="file-upload-label">
+                                        <i class="fa-solid fa-image"></i>
+                                        <span>Upload an image</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Complete Form Example -->
+            <section class="additional-cards" style="grid-template-columns: 1fr;">
+                <div class="info-card">
+                    <div class="card-header">
+                        <h3>Complete Form Example</h3>
+                    </div>
+                    <div class="card-body">
+                        <form class="form-section">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label required" for="first-name">First Name</label>
+                                    <input type="text" id="first-name" class="form-input" placeholder="John">
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="form-label required" for="last-name">Last Name</label>
+                                    <input type="text" id="last-name" class="form-input" placeholder="Doe">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label required" for="email">Email Address</label>
+                                <input type="email" id="email" class="form-input" placeholder="john.doe@example.com">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="country">Country</label>
+                                <select id="country" class="form-select">
+                                    <option value="">Select a country</option>
+                                    <option value="us">United States</option>
+                                    <option value="uk">United Kingdom</option>
+                                    <option value="ca">Canada</option>
+                                    <option value="au">Australia</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="bio">Bio</label>
+                                <textarea id="bio" class="form-textarea" rows="4" placeholder="Tell us about yourself..."></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label">Newsletter</label>
+                                <div class="checkbox-group">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="newsletter">
+                                        <label for="newsletter">Subscribe to our newsletter</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fa-solid fa-check"></i>
+                                    Submit Form
+                                </button>
+                                <button type="reset" class="btn btn-secondary">
+                                    <i class="fa-solid fa-rotate"></i>
+                                    Reset
+                                </button>
+                                <button type="button" class="btn btn-danger">
+                                    <i class="fa-solid fa-times"></i>
+                                    Cancel
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="copyright">© 2024 Liquid Glass Admin Template. All rights reserved.</p>
+            <p class="developer">
+                Developed with <i class="fa-solid fa-heart"></i> by 
+                <strong>
+                    <a href="https://www.linkedin.com/in/dexterity-wurayayi-967a64230" target="_blank" rel="noopener noreferrer" style="color: var(--text-primary); text-decoration: none; transition: var(--transition);">
+                        DexterWura
+                        <i class="fa-brands fa-linkedin" style="margin-left: 0.5rem; font-size: 0.85rem;"></i>
+                    </a>
+                </strong>
+            </p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Range slider value display
+        const rangeInput = document.getElementById('range-input');
+        const rangeValue = document.getElementById('range-value');
+        const rangeDisplay = document.getElementById('range-display');
+
+        if (rangeInput && rangeValue && rangeDisplay) {
+            rangeInput.addEventListener('input', function() {
+                const value = this.value;
+                rangeValue.textContent = value;
+                rangeDisplay.textContent = value;
+            });
+        }
+    </script>
+</body>
+</html>
+

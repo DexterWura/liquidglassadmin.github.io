@@ -1,7 +1,4 @@
-// Analytics Page Charts
-
 document.addEventListener('DOMContentLoaded', function() {
-    // Mobile menu toggle
     const menuToggle = document.getElementById('menuToggle');
     const sidebar = document.querySelector('.sidebar');
     
@@ -11,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Close sidebar when clicking outside on mobile
     document.addEventListener('click', function(event) {
         if (window.innerWidth <= 768) {
             if (!sidebar.contains(event.target) && !menuToggle.contains(event.target)) {
@@ -20,23 +16,19 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Chart controls
     const chartButtons = document.querySelectorAll('.chart-btn');
     chartButtons.forEach(button => {
         button.addEventListener('click', function() {
             chartButtons.forEach(btn => btn.classList.remove('active'));
             this.classList.add('active');
-            // Here you would update the chart data based on the selected period
         });
     });
 
-    // Initialize Charts
     initVisitorChart();
     initSourceChart();
     initDeviceChart();
 });
 
-// Visitor Chart
 function initVisitorChart() {
     const ctx = document.getElementById('visitorChart');
     if (!ctx) return;
@@ -121,7 +113,6 @@ function initVisitorChart() {
     });
 }
 
-// Traffic Source Chart
 function initSourceChart() {
     const ctx = document.getElementById('sourceChart');
     if (!ctx) return;
@@ -202,7 +193,6 @@ function initSourceChart() {
     });
 }
 
-// Device Chart
 function initDeviceChart() {
     const ctx = document.getElementById('deviceChart');
     if (!ctx) return;

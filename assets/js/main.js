@@ -1,36 +1,33 @@
 // Liquid Glass Admin Dashboard - JavaScript
 
-// Page load animation
 window.addEventListener('load', function() {
     document.body.classList.remove('loading');
     document.body.classList.add('loaded');
     
-    // Trigger animations for cards
     const cards = document.querySelectorAll('.stat-card, .chart-card, .info-card');
+    const cardCount = cards.length;
+    const maxDelay = Math.min(cardCount * 20, 200);
+    
     cards.forEach((card, index) => {
+        const delay = Math.min(index * 20, maxDelay);
         setTimeout(() => {
             card.style.opacity = '1';
             card.style.transform = 'translateY(0)';
-        }, index * 50);
+        }, delay);
     });
 });
 
-// Initialize on DOM ready
 document.addEventListener('DOMContentLoaded', function() {
-    // Add loading class initially
     document.body.classList.add('loading');
     
-    // Mobile menu toggle with improved UX
     const menuToggle = document.getElementById('menuToggle');
     const sidebar = document.querySelector('.sidebar');
     
     if (menuToggle && sidebar) {
-        // Prevent body scroll when sidebar is open
         const toggleSidebar = (open) => {
             if (open) {
                 sidebar.classList.add('open');
                 document.body.classList.add('sidebar-open');
-                // Prevent scroll on body
                 document.body.style.overflow = 'hidden';
             } else {
                 sidebar.classList.remove('open');
@@ -45,7 +42,6 @@ document.addEventListener('DOMContentLoaded', function() {
             toggleSidebar(!isOpen);
         });
 
-        // Close sidebar when clicking outside on mobile/tablet
         const handleOutsideClick = (event) => {
             if (window.innerWidth <= 1199) {
                 if (sidebar.classList.contains('open')) {
@@ -56,10 +52,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         };
 
-        // Use passive listener for better performance
         document.addEventListener('click', handleOutsideClick, { passive: true });
 
-        // Close sidebar on window resize if it becomes desktop size
         let resizeTimer;
         window.addEventListener('resize', function() {
             clearTimeout(resizeTimer);
@@ -70,7 +64,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 150);
         }, { passive: true });
 
-        // Close sidebar when clicking nav items on mobile/tablet
         const navItems = document.querySelectorAll('.nav-item');
         navItems.forEach(item => {
             item.addEventListener('click', function() {
@@ -80,7 +73,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }, { passive: true });
         });
         
-        // Mobile search bar toggle - camelClone pattern
         const searchBarToggle = document.querySelector('.search-bar-toggle');
         const searchBox = document.querySelector('.search-box');
         
@@ -90,7 +82,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 searchBox.classList.toggle('search-bar-show');
             }, { passive: false });
             
-            // Close search bar when clicking outside
             document.addEventListener('click', function(event) {
                 if (window.innerWidth <= 1199) {
                     if (searchBox.classList.contains('search-bar-show')) {
@@ -103,7 +94,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Chart controls with smooth transitions
     const chartButtons = document.querySelectorAll('.chart-btn');
     chartButtons.forEach(button => {
         button.addEventListener('click', function(e) {
@@ -115,7 +105,6 @@ document.addEventListener('DOMContentLoaded', function() {
             this.classList.add('active');
             this.setAttribute('aria-pressed', 'true');
             
-            // Add ripple effect
             const ripple = document.createElement('span');
             ripple.style.cssText = `
                 position: absolute;
@@ -136,12 +125,9 @@ document.addEventListener('DOMContentLoaded', function() {
             this.appendChild(ripple);
             
             setTimeout(() => ripple.remove(), 600);
-            
-            // Here you would update the chart data based on the selected period
         }, { passive: false });
     });
     
-    // Add ripple animation to CSS dynamically
     if (!document.getElementById('ripple-animation')) {
         const style = document.createElement('style');
         style.id = 'ripple-animation';
@@ -156,7 +142,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.head.appendChild(style);
     }
 
-    // Initialize Charts
     initRevenueChart();
     initActivityChart();
     initTrafficChart();
@@ -166,7 +151,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initComparisonChart();
 });
 
-// Revenue Chart
 function initRevenueChart() {
     const ctx = document.getElementById('revenueChart');
     if (!ctx) return;
@@ -254,7 +238,6 @@ function initRevenueChart() {
     });
 }
 
-// Activity Chart
 function initActivityChart() {
     const ctx = document.getElementById('activityChart');
     if (!ctx) return;
@@ -332,7 +315,6 @@ function initActivityChart() {
     });
 }
 
-// Traffic Chart (Doughnut)
 function initTrafficChart() {
     const ctx = document.getElementById('trafficChart');
     if (!ctx) return;
@@ -404,7 +386,6 @@ function initTrafficChart() {
     });
 }
 
-// Animate progress bars on scroll with improved performance
 const progressObserverOptions = {
     threshold: 0.3,
     rootMargin: '0px'
@@ -421,7 +402,6 @@ const progressObserver = new IntersectionObserver((entries) => {
                 progressFill.style.width = '0%';
                 progressFill.style.opacity = '0';
                 
-                // Use requestAnimationFrame for smooth animation
                 requestAnimationFrame(() => {
                     setTimeout(() => {
                         progressFill.style.transition = 'width 0.8s cubic-bezier(0.19, 1, 0.22, 1), opacity 0.3s ease';
@@ -434,12 +414,10 @@ const progressObserver = new IntersectionObserver((entries) => {
     });
 }, progressObserverOptions);
 
-// Observe all product items
 document.querySelectorAll('.product-item').forEach(item => {
     progressObserver.observe(item);
 });
 
-// Performance optimization: Debounce scroll events
 let scrollTimeout;
 const optimizedScrollHandler = () => {
     if (scrollTimeout) {
@@ -452,7 +430,6 @@ const optimizedScrollHandler = () => {
 
 window.addEventListener('scroll', optimizedScrollHandler, { passive: true });
 
-// Smooth scroll for anchor links with offset
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
@@ -461,7 +438,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         e.preventDefault();
         const target = document.querySelector(href);
         if (target) {
-            const offset = 80; // Account for fixed headers
+            const offset = 80;
             const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
             
             window.scrollTo({
@@ -472,7 +449,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }, { passive: false });
 });
 
-// Smooth scroll to top functionality
 const scrollToTop = () => {
     window.scrollTo({
         top: 0,
@@ -480,7 +456,6 @@ const scrollToTop = () => {
     });
 };
 
-// Add scroll to top button (optional enhancement)
 const addScrollToTop = () => {
     const button = document.createElement('button');
     button.innerHTML = '<i class="fa-solid fa-arrow-up"></i>';
@@ -548,14 +523,11 @@ const addScrollToTop = () => {
     });
 };
 
-// Initialize scroll to top button
 addScrollToTop();
 
-// Update stats animation with easing
 function animateValue(element, start, end, duration) {
     let startTimestamp = null;
     
-    // Easing function for smooth animation
     const easeOutCubic = (t) => {
         return 1 - Math.pow(1 - t, 3);
     };
@@ -583,7 +555,6 @@ function animateValue(element, start, end, duration) {
         if (progress < 1) {
             window.requestAnimationFrame(step);
         } else {
-            // Ensure final value is set correctly
             if (hasDollar) {
                 element.textContent = '$' + end.toLocaleString();
             } else if (hasPercent) {
@@ -596,7 +567,6 @@ function animateValue(element, start, end, duration) {
     window.requestAnimationFrame(step);
 }
 
-// Animate stat values on scroll into view
 const animateStatsOnScroll = () => {
     const statValues = document.querySelectorAll('.stat-value');
     const observerOptions = {
@@ -627,10 +597,8 @@ const animateStatsOnScroll = () => {
     });
 };
 
-// Initialize stat animations
 animateStatsOnScroll();
 
-// Sales Pie Chart
 function initSalesPieChart() {
     const ctx = document.getElementById('salesPieChart');
     if (!ctx) return;
@@ -680,7 +648,6 @@ function initSalesPieChart() {
     });
 }
 
-// Growth Chart (Area Chart)
 function initGrowthChart() {
     const ctx = document.getElementById('growthChart');
     if (!ctx) return;
@@ -742,7 +709,6 @@ function initGrowthChart() {
     });
 }
 
-// Category Performance Chart (Radar)
 function initCategoryChart() {
     const ctx = document.getElementById('categoryChart');
     if (!ctx) return;
@@ -804,7 +770,6 @@ function initCategoryChart() {
     });
 }
 
-// Monthly Comparison Chart (Bar)
 function initComparisonChart() {
     const ctx = document.getElementById('comparisonChart');
     if (!ctx) return;
