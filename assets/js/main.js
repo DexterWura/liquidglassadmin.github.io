@@ -75,26 +75,66 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }, { passive: true });
         });
+    }
+
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    
+    if (sidebarToggle && sidebar) {
+        const toggleCollapse = (collapsed) => {
+            if (window.innerWidth >= 1200) {
+                if (collapsed) {
+                    sidebar.classList.add('collapsed');
+                    localStorage.setItem('sidebarCollapsed', 'true');
+                } else {
+                    sidebar.classList.remove('collapsed');
+                    localStorage.setItem('sidebarCollapsed', 'false');
+                }
+            }
+        };
+
+        const savedState = localStorage.getItem('sidebarCollapsed');
+        if (savedState === 'true' && window.innerWidth >= 1200) {
+            toggleCollapse(true);
+        }
+
+        sidebarToggle.addEventListener('click', function(e) {
+            e.stopPropagation();
+            if (window.innerWidth >= 1200) {
+                const isCollapsed = sidebar.classList.contains('collapsed');
+                toggleCollapse(!isCollapsed);
+            }
+        }, { passive: true });
+
+        window.addEventListener('resize', function() {
+            if (window.innerWidth < 1200) {
+                sidebar.classList.remove('collapsed');
+            } else {
+                const savedState = localStorage.getItem('sidebarCollapsed');
+                if (savedState === 'true') {
+                    toggleCollapse(true);
+                }
+            }
+        }, { passive: true });
+    }
+    
+    const searchBarToggle = document.querySelector('.search-bar-toggle');
+    const searchBox = document.querySelector('.search-box');
+    
+    if (searchBarToggle && searchBox) {
+        searchBarToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            searchBox.classList.toggle('search-bar-show');
+        }, { passive: false });
         
-        const searchBarToggle = document.querySelector('.search-bar-toggle');
-        const searchBox = document.querySelector('.search-box');
-        
-        if (searchBarToggle && searchBox) {
-            searchBarToggle.addEventListener('click', function(e) {
-                e.preventDefault();
-                searchBox.classList.toggle('search-bar-show');
-            }, { passive: false });
-            
-            document.addEventListener('click', function(event) {
-                if (window.innerWidth <= 1199) {
-                    if (searchBox.classList.contains('search-bar-show')) {
-                        if (!searchBox.contains(event.target) && !searchBarToggle.contains(event.target)) {
-                            searchBox.classList.remove('search-bar-show');
-                        }
+        document.addEventListener('click', function(event) {
+            if (window.innerWidth <= 1199) {
+                if (searchBox.classList.contains('search-bar-show')) {
+                    if (!searchBox.contains(event.target) && !searchBarToggle.contains(event.target)) {
+                        searchBox.classList.remove('search-bar-show');
                     }
                 }
-            }, { passive: true });
-        }
+            }
+        }, { passive: true });
     }
 
     const chartButtons = document.querySelectorAll('.chart-btn');
