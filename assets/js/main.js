@@ -18,6 +18,11 @@ window.addEventListener('load', function() {
 document.addEventListener('DOMContentLoaded', function() {
     document.body.classList.add('loading');
     
+    const currentYearElement = document.getElementById('currentYear');
+    if (currentYearElement) {
+        currentYearElement.textContent = new Date().getFullYear();
+    }
+    
     const menuToggle = document.getElementById('menuToggle');
     const sidebar = document.querySelector('.sidebar');
     
