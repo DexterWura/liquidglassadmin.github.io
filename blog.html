@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Liquid Glass Admin Dashboard</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="logo-link">
+                <h1 class="logo">Liquid Glass</h1>
+            </a>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <i class="fa-solid fa-house nav-icon"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="analytics.html" class="nav-item">
+                <i class="fa-solid fa-chart-line nav-icon"></i>
+                <span>Analytics</span>
+            </a>
+            <a href="users.html" class="nav-item">
+                <i class="fa-solid fa-users nav-icon"></i>
+                <span>Users</span>
+            </a>
+            <a href="products.html" class="nav-item">
+                <i class="fa-solid fa-cube nav-icon"></i>
+                <span>Products</span>
+            </a>
+            <a href="orders.html" class="nav-item">
+                <i class="fa-solid fa-shopping-bag nav-icon"></i>
+                <span>Orders</span>
+            </a>
+            <a href="pos.html" class="nav-item">
+                <i class="fa-solid fa-cash-register nav-icon"></i>
+                <span>POS</span>
+            </a>
+            <a href="messages.html" class="nav-item">
+                <i class="fa-solid fa-envelope nav-icon"></i>
+                <span>Messages</span>
+            </a>
+            <a href="notifications.html" class="nav-item">
+                <i class="fa-solid fa-bell nav-icon"></i>
+                <span>Notifications</span>
+            </a>
+            <a href="calendar.html" class="nav-item">
+                <i class="fa-solid fa-calendar nav-icon"></i>
+                <span>Calendar</span>
+            </a>
+            <a href="reports.html" class="nav-item">
+                <i class="fa-solid fa-file-lines nav-icon"></i>
+                <span>Reports</span>
+            </a>
+            <a href="invoices.html" class="nav-item">
+                <i class="fa-solid fa-file-invoice nav-icon"></i>
+                <span>Invoices</span>
+            </a>
+            <a href="expenses.html" class="nav-item">
+                <i class="fa-solid fa-money-bill-wave nav-icon"></i>
+                <span>Expenses</span>
+            </a>
+            <a href="tasks.html" class="nav-item">
+                <i class="fa-solid fa-tasks nav-icon"></i>
+                <span>Tasks</span>
+            </a>
+            <a href="blog.html" class="nav-item active">
+                <i class="fa-solid fa-blog nav-icon"></i>
+                <span>Blog</span>
+            </a>
+            <a href="help.html" class="nav-item">
+                <i class="fa-solid fa-circle-question nav-icon"></i>
+                <span>Help</span>
+            </a>
+            <a href="tables.html" class="nav-item">
+                <i class="fa-solid fa-table nav-icon"></i>
+                <span>Tables</span>
+            </a>
+            <a href="forms.html" class="nav-item">
+                <i class="fa-solid fa-file-pen nav-icon"></i>
+                <span>Forms</span>
+            </a>
+            <a href="buttons.html" class="nav-item">
+                <i class="fa-solid fa-hand-pointer nav-icon"></i>
+                <span>Buttons</span>
+            </a>
+            <a href="progress.html" class="nav-item">
+                <i class="fa-solid fa-bars-progress nav-icon"></i>
+                <span>Progress</span>
+            </a>
+            <a href="profile.html" class="nav-item">
+                <i class="fa-solid fa-user nav-icon"></i>
+                <span>Profile</span>
+            </a>
+            <a href="modals.html" class="nav-item">
+                <i class="fa-solid fa-window-maximize nav-icon"></i>
+                <span>Modals</span>
+            </a>
+            <a href="settings.html" class="nav-item">
+                <i class="fa-solid fa-gear nav-icon"></i>
+                <span>Settings</span>
+            </a>
+        </nav>
+        <div class="sidebar-version">v1.0.2</div>
+    </aside>
+
+    <main class="main-content">
+        <header class="top-bar">
+            <div class="top-bar-left">
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <h2 class="page-title">Blog</h2>
+            </div>
+            <div class="top-bar-right">
+                <button class="search-bar-toggle" aria-label="Toggle search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" placeholder="Search articles...">
+                </div>
+                <button class="notification-btn">
+                    <i class="fa-solid fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+                <button class="notification-btn btn-primary">
+                    <i class="fa-solid fa-plus"></i> New Post
+                </button>
+                <div class="user-profile">
+                    <img src="https://ui-avatars.com/api/?name=Admin&background=random" alt="User" class="profile-img">
+                </div>
+            </div>
+        </header>
+
+        <nav class="breadcrumbs">
+            <a href="index.html">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+            <span class="breadcrumb-separator">
+                <i class="fa-solid fa-chevron-right"></i>
+            </span>
+            <a href="dashboard.html">Dashboard</a>
+            <span class="breadcrumb-separator">
+                <i class="fa-solid fa-chevron-right"></i>
+            </span>
+            <span class="breadcrumb-current">Blog</span>
+        </nav>
+
+        <div class="dashboard-content">
+            <section class="stats-section">
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <h3>Total Posts</h3>
+                        <i class="fa-solid fa-file-lines stat-icon"></i>
+                    </div>
+                    <div class="stat-card-body">
+                        <p class="stat-value">124</p>
+                        <p class="stat-change positive">+8 this month</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <h3>Published</h3>
+                        <i class="fa-solid fa-check-circle stat-icon"></i>
+                    </div>
+                    <div class="stat-card-body">
+                        <p class="stat-value">98</p>
+                        <p class="stat-change positive">+5 this month</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <h3>Drafts</h3>
+                        <i class="fa-solid fa-edit stat-icon"></i>
+                    </div>
+                    <div class="stat-card-body">
+                        <p class="stat-value">18</p>
+                        <p class="stat-change negative">-2 this month</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <h3>Views</h3>
+                        <i class="fa-solid fa-eye stat-icon"></i>
+                    </div>
+                    <div class="stat-card-body">
+                        <p class="stat-value">45.2K</p>
+                        <p class="stat-change positive">+12.5% this month</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="additional-cards">
+                <div class="info-card">
+                    <div class="card-header">
+                        <h3>Recent Posts</h3>
+                        <div class="filter-controls">
+                            <select class="filter-select">
+                                <option>All Categories</option>
+                                <option>Technology</option>
+                                <option>Business</option>
+                                <option>Design</option>
+                                <option>Tutorials</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="blog-posts-grid">
+                            <article class="blog-post-card">
+                                <div class="blog-post-image">
+                                    <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=400&h=250&fit=crop" alt="Blog Post" loading="lazy">
+                                    <span class="blog-post-badge blog-post-published">Published</span>
+                                </div>
+                                <div class="blog-post-content">
+                                    <div class="blog-post-meta">
+                                        <span class="blog-post-category">Technology</span>
+                                        <span class="blog-post-date">Dec 15, 2024</span>
+                                    </div>
+                                    <h3 class="blog-post-title">Getting Started with Modern Web Development</h3>
+                                    <p class="blog-post-excerpt">Learn the fundamentals of modern web development and build amazing applications with the latest technologies.</p>
+                                    <div class="blog-post-footer">
+                                        <div class="blog-post-stats">
+                                            <span><i class="fa-solid fa-eye"></i> 1.2K</span>
+                                            <span><i class="fa-solid fa-comment"></i> 24</span>
+                                            <span><i class="fa-solid fa-heart"></i> 89</span>
+                                        </div>
+                                        <div class="blog-post-actions">
+                                            <button class="btn-outline-primary btn-sm">
+                                                <i class="fa-solid fa-edit"></i> Edit
+                                            </button>
+                                            <button class="btn-outline-danger btn-sm">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="blog-post-card">
+                                <div class="blog-post-image">
+                                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop" alt="Blog Post" loading="lazy">
+                                    <span class="blog-post-badge blog-post-published">Published</span>
+                                </div>
+                                <div class="blog-post-content">
+                                    <div class="blog-post-meta">
+                                        <span class="blog-post-category">Business</span>
+                                        <span class="blog-post-date">Dec 12, 2024</span>
+                                    </div>
+                                    <h3 class="blog-post-title">Building a Successful E-commerce Platform</h3>
+                                    <p class="blog-post-excerpt">Discover the key strategies and best practices for creating a thriving online store.</p>
+                                    <div class="blog-post-footer">
+                                        <div class="blog-post-stats">
+                                            <span><i class="fa-solid fa-eye"></i> 2.5K</span>
+                                            <span><i class="fa-solid fa-comment"></i> 42</span>
+                                            <span><i class="fa-solid fa-heart"></i> 156</span>
+                                        </div>
+                                        <div class="blog-post-actions">
+                                            <button class="btn-outline-primary btn-sm">
+                                                <i class="fa-solid fa-edit"></i> Edit
+                                            </button>
+                                            <button class="btn-outline-danger btn-sm">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="blog-post-card">
+                                <div class="blog-post-image">
+                                    <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?w=400&h=250&fit=crop" alt="Blog Post" loading="lazy">
+                                    <span class="blog-post-badge blog-post-draft">Draft</span>
+                                </div>
+                                <div class="blog-post-content">
+                                    <div class="blog-post-meta">
+                                        <span class="blog-post-category">Design</span>
+                                        <span class="blog-post-date">Dec 10, 2024</span>
+                                    </div>
+                                    <h3 class="blog-post-title">UI/UX Design Principles for 2024</h3>
+                                    <p class="blog-post-excerpt">Explore the latest design trends and principles that will shape user interfaces in the coming year.</p>
+                                    <div class="blog-post-footer">
+                                        <div class="blog-post-stats">
+                                            <span><i class="fa-solid fa-eye"></i> 0</span>
+                                            <span><i class="fa-solid fa-comment"></i> 0</span>
+                                            <span><i class="fa-solid fa-heart"></i> 0</span>
+                                        </div>
+                                        <div class="blog-post-actions">
+                                            <button class="btn-outline-primary btn-sm">
+                                                <i class="fa-solid fa-edit"></i> Edit
+                                            </button>
+                                            <button class="btn-outline-danger btn-sm">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="blog-post-card">
+                                <div class="blog-post-image">
+                                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop" alt="Blog Post" loading="lazy">
+                                    <span class="blog-post-badge blog-post-published">Published</span>
+                                </div>
+                                <div class="blog-post-content">
+                                    <div class="blog-post-meta">
+                                        <span class="blog-post-category">Tutorials</span>
+                                        <span class="blog-post-date">Dec 8, 2024</span>
+                                    </div>
+                                    <h3 class="blog-post-title">Complete Guide to CSS Grid Layout</h3>
+                                    <p class="blog-post-excerpt">Master CSS Grid with this comprehensive tutorial covering all the essential concepts and techniques.</p>
+                                    <div class="blog-post-footer">
+                                        <div class="blog-post-stats">
+                                            <span><i class="fa-solid fa-eye"></i> 3.1K</span>
+                                            <span><i class="fa-solid fa-comment"></i> 67</span>
+                                            <span><i class="fa-solid fa-heart"></i> 234</span>
+                                        </div>
+                                        <div class="blog-post-actions">
+                                            <button class="btn-outline-primary btn-sm">
+                                                <i class="fa-solid fa-edit"></i> Edit
+                                            </button>
+                                            <button class="btn-outline-danger btn-sm">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="blog-post-card">
+                                <div class="blog-post-image">
+                                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=250&fit=crop" alt="Blog Post" loading="lazy">
+                                    <span class="blog-post-badge blog-post-published">Published</span>
+                                </div>
+                                <div class="blog-post-content">
+                                    <div class="blog-post-meta">
+                                        <span class="blog-post-category">Technology</span>
+                                        <span class="blog-post-date">Dec 5, 2024</span>
+                                    </div>
+                                    <h3 class="blog-post-title">JavaScript Best Practices for 2024</h3>
+                                    <p class="blog-post-excerpt">Learn the modern JavaScript patterns and best practices that every developer should know.</p>
+                                    <div class="blog-post-footer">
+                                        <div class="blog-post-stats">
+                                            <span><i class="fa-solid fa-eye"></i> 1.8K</span>
+                                            <span><i class="fa-solid fa-comment"></i> 31</span>
+                                            <span><i class="fa-solid fa-heart"></i> 112</span>
+                                        </div>
+                                        <div class="blog-post-actions">
+                                            <button class="btn-outline-primary btn-sm">
+                                                <i class="fa-solid fa-edit"></i> Edit
+                                            </button>
+                                            <button class="btn-outline-danger btn-sm">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="blog-post-card">
+                                <div class="blog-post-image">
+                                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=250&fit=crop" alt="Blog Post" loading="lazy">
+                                    <span class="blog-post-badge blog-post-draft">Draft</span>
+                                </div>
+                                <div class="blog-post-content">
+                                    <div class="blog-post-meta">
+                                        <span class="blog-post-category">Business</span>
+                                        <span class="blog-post-date">Dec 3, 2024</span>
+                                    </div>
+                                    <h3 class="blog-post-title">Digital Marketing Strategies That Work</h3>
+                                    <p class="blog-post-excerpt">Discover proven digital marketing strategies to grow your business and reach more customers online.</p>
+                                    <div class="blog-post-footer">
+                                        <div class="blog-post-stats">
+                                            <span><i class="fa-solid fa-eye"></i> 0</span>
+                                            <span><i class="fa-solid fa-comment"></i> 0</span>
+                                            <span><i class="fa-solid fa-heart"></i> 0</span>
+                                        </div>
+                                        <div class="blog-post-actions">
+                                            <button class="btn-outline-primary btn-sm">
+                                                <i class="fa-solid fa-edit"></i> Edit
+                                            </button>
+                                            <button class="btn-outline-danger btn-sm">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="copyright">© <span id="currentYear">2024</span> Liquid Glass Admin Template. All rights reserved.</p>
+            <p class="developer">
+                Developed with <i class="fa-solid fa-heart"></i> by 
+                <strong>
+                    <a href="https://www.linkedin.com/in/dexterity-wurayayi-967a64230" target="_blank" rel="noopener noreferrer" class="developer-link">
+                        DexterWura
+                        <i class="fa-brands fa-linkedin developer-link-icon"></i>
+                    </a>
+                </strong>
+            </p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+

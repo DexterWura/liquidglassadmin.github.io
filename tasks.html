@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks - Liquid Glass Admin Dashboard</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="logo-link">
+                <h1 class="logo">Liquid Glass</h1>
+            </a>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <i class="fa-solid fa-house nav-icon"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="analytics.html" class="nav-item">
+                <i class="fa-solid fa-chart-line nav-icon"></i>
+                <span>Analytics</span>
+            </a>
+            <a href="users.html" class="nav-item">
+                <i class="fa-solid fa-users nav-icon"></i>
+                <span>Users</span>
+            </a>
+            <a href="products.html" class="nav-item">
+                <i class="fa-solid fa-cube nav-icon"></i>
+                <span>Products</span>
+            </a>
+            <a href="orders.html" class="nav-item">
+                <i class="fa-solid fa-shopping-bag nav-icon"></i>
+                <span>Orders</span>
+            </a>
+            <a href="pos.html" class="nav-item">
+                <i class="fa-solid fa-cash-register nav-icon"></i>
+                <span>POS</span>
+            </a>
+            <a href="messages.html" class="nav-item">
+                <i class="fa-solid fa-envelope nav-icon"></i>
+                <span>Messages</span>
+            </a>
+            <a href="notifications.html" class="nav-item">
+                <i class="fa-solid fa-bell nav-icon"></i>
+                <span>Notifications</span>
+            </a>
+            <a href="calendar.html" class="nav-item">
+                <i class="fa-solid fa-calendar nav-icon"></i>
+                <span>Calendar</span>
+            </a>
+            <a href="reports.html" class="nav-item">
+                <i class="fa-solid fa-file-lines nav-icon"></i>
+                <span>Reports</span>
+            </a>
+            <a href="invoices.html" class="nav-item">
+                <i class="fa-solid fa-file-invoice nav-icon"></i>
+                <span>Invoices</span>
+            </a>
+            <a href="expenses.html" class="nav-item">
+                <i class="fa-solid fa-money-bill-wave nav-icon"></i>
+                <span>Expenses</span>
+            </a>
+            <a href="tasks.html" class="nav-item active">
+                <i class="fa-solid fa-tasks nav-icon"></i>
+                <span>Tasks</span>
+            </a>
+            <a href="blog.html" class="nav-item">
+                <i class="fa-solid fa-blog nav-icon"></i>
+                <span>Blog</span>
+            </a>
+            <a href="help.html" class="nav-item">
+                <i class="fa-solid fa-circle-question nav-icon"></i>
+                <span>Help</span>
+            </a>
+            <a href="tables.html" class="nav-item">
+                <i class="fa-solid fa-table nav-icon"></i>
+                <span>Tables</span>
+            </a>
+            <a href="forms.html" class="nav-item">
+                <i class="fa-solid fa-file-pen nav-icon"></i>
+                <span>Forms</span>
+            </a>
+            <a href="buttons.html" class="nav-item">
+                <i class="fa-solid fa-hand-pointer nav-icon"></i>
+                <span>Buttons</span>
+            </a>
+            <a href="progress.html" class="nav-item">
+                <i class="fa-solid fa-bars-progress nav-icon"></i>
+                <span>Progress</span>
+            </a>
+            <a href="profile.html" class="nav-item">
+                <i class="fa-solid fa-user nav-icon"></i>
+                <span>Profile</span>
+            </a>
+            <a href="modals.html" class="nav-item">
+                <i class="fa-solid fa-window-maximize nav-icon"></i>
+                <span>Modals</span>
+            </a>
+            <a href="settings.html" class="nav-item">
+                <i class="fa-solid fa-gear nav-icon"></i>
+                <span>Settings</span>
+            </a>
+        </nav>
+        <div class="sidebar-version">v1.0.2</div>
+    </aside>
+
+    <main class="main-content">
+        <header class="top-bar">
+            <div class="top-bar-left">
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <h2 class="page-title">Tasks</h2>
+            </div>
+            <div class="top-bar-right">
+                <button class="search-bar-toggle" aria-label="Toggle search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" placeholder="Search tasks...">
+                </div>
+                <button class="notification-btn">
+                    <i class="fa-solid fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+                <button class="notification-btn btn-primary">
+                    <i class="fa-solid fa-plus"></i> New Task
+                </button>
+                <div class="user-profile">
+                    <img src="https://ui-avatars.com/api/?name=Admin&background=random" alt="User" class="profile-img">
+                </div>
+            </div>
+        </header>
+
+        <nav class="breadcrumbs">
+            <a href="index.html">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+            <span class="breadcrumb-separator">
+                <i class="fa-solid fa-chevron-right"></i>
+            </span>
+            <a href="dashboard.html">Dashboard</a>
+            <span class="breadcrumb-separator">
+                <i class="fa-solid fa-chevron-right"></i>
+            </span>
+            <span class="breadcrumb-current">Tasks</span>
+        </nav>
+
+        <div class="dashboard-content">
+            <section class="stats-section">
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <h3>Total Tasks</h3>
+                        <i class="fa-solid fa-tasks stat-icon"></i>
+                    </div>
+                    <div class="stat-card-body">
+                        <p class="stat-value">48</p>
+                        <p class="stat-change positive">+5 this week</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <h3>Completed</h3>
+                        <i class="fa-solid fa-check-circle stat-icon"></i>
+                    </div>
+                    <div class="stat-card-body">
+                        <p class="stat-value">32</p>
+                        <p class="stat-change positive">66.7% done</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <h3>In Progress</h3>
+                        <i class="fa-solid fa-spinner stat-icon"></i>
+                    </div>
+                    <div class="stat-card-body">
+                        <p class="stat-value">12</p>
+                        <p class="stat-change negative">25% active</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <h3>Pending</h3>
+                        <i class="fa-solid fa-clock stat-icon"></i>
+                    </div>
+                    <div class="stat-card-body">
+                        <p class="stat-value">4</p>
+                        <p class="stat-change negative">8.3% pending</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="additional-cards">
+                <div class="info-card">
+                    <div class="card-header">
+                        <h3>Task List</h3>
+                        <div class="filter-controls">
+                            <select class="filter-select">
+                                <option>All Tasks</option>
+                                <option>High Priority</option>
+                                <option>Medium Priority</option>
+                                <option>Low Priority</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="task-list">
+                            <div class="task-item task-completed">
+                                <div class="task-checkbox">
+                                    <input type="checkbox" checked>
+                                </div>
+                                <div class="task-content">
+                                    <h4 class="task-title">Complete dashboard redesign</h4>
+                                    <p class="task-description">Update the dashboard layout and improve user experience</p>
+                                    <div class="task-meta">
+                                        <span class="task-priority task-priority-high">High</span>
+                                        <span class="task-date"><i class="fa-solid fa-calendar"></i> Dec 20, 2024</span>
+                                        <span class="task-assignee"><i class="fa-solid fa-user"></i> John Doe</span>
+                                    </div>
+                                </div>
+                                <div class="task-actions">
+                                    <button class="btn-outline-primary btn-sm">
+                                        <i class="fa-solid fa-edit"></i>
+                                    </button>
+                                    <button class="btn-outline-danger btn-sm">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="task-item task-in-progress">
+                                <div class="task-checkbox">
+                                    <input type="checkbox">
+                                </div>
+                                <div class="task-content">
+                                    <h4 class="task-title">Implement user authentication</h4>
+                                    <p class="task-description">Add login, signup, and session management features</p>
+                                    <div class="task-meta">
+                                        <span class="task-priority task-priority-medium">Medium</span>
+                                        <span class="task-date"><i class="fa-solid fa-calendar"></i> Dec 22, 2024</span>
+                                        <span class="task-assignee"><i class="fa-solid fa-user"></i> Jane Smith</span>
+                                    </div>
+                                </div>
+                                <div class="task-actions">
+                                    <button class="btn-outline-primary btn-sm">
+                                        <i class="fa-solid fa-edit"></i>
+                                    </button>
+                                    <button class="btn-outline-danger btn-sm">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="task-item task-pending">
+                                <div class="task-checkbox">
+                                    <input type="checkbox">
+                                </div>
+                                <div class="task-content">
+                                    <h4 class="task-title">Write API documentation</h4>
+                                    <p class="task-description">Document all API endpoints and provide usage examples</p>
+                                    <div class="task-meta">
+                                        <span class="task-priority task-priority-low">Low</span>
+                                        <span class="task-date"><i class="fa-solid fa-calendar"></i> Dec 25, 2024</span>
+                                        <span class="task-assignee"><i class="fa-solid fa-user"></i> Mike Johnson</span>
+                                    </div>
+                                </div>
+                                <div class="task-actions">
+                                    <button class="btn-outline-primary btn-sm">
+                                        <i class="fa-solid fa-edit"></i>
+                                    </button>
+                                    <button class="btn-outline-danger btn-sm">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="task-item task-in-progress">
+                                <div class="task-checkbox">
+                                    <input type="checkbox">
+                                </div>
+                                <div class="task-content">
+                                    <h4 class="task-title">Optimize database queries</h4>
+                                    <p class="task-description">Review and optimize slow database queries for better performance</p>
+                                    <div class="task-meta">
+                                        <span class="task-priority task-priority-high">High</span>
+                                        <span class="task-date"><i class="fa-solid fa-calendar"></i> Dec 18, 2024</span>
+                                        <span class="task-assignee"><i class="fa-solid fa-user"></i> Sarah Williams</span>
+                                    </div>
+                                </div>
+                                <div class="task-actions">
+                                    <button class="btn-outline-primary btn-sm">
+                                        <i class="fa-solid fa-edit"></i>
+                                    </button>
+                                    <button class="btn-outline-danger btn-sm">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="task-item task-pending">
+                                <div class="task-checkbox">
+                                    <input type="checkbox">
+                                </div>
+                                <div class="task-content">
+                                    <h4 class="task-title">Update user interface components</h4>
+                                    <p class="task-description">Refresh UI components with new design system</p>
+                                    <div class="task-meta">
+                                        <span class="task-priority task-priority-medium">Medium</span>
+                                        <span class="task-date"><i class="fa-solid fa-calendar"></i> Dec 28, 2024</span>
+                                        <span class="task-assignee"><i class="fa-solid fa-user"></i> David Brown</span>
+                                    </div>
+                                </div>
+                                <div class="task-actions">
+                                    <button class="btn-outline-primary btn-sm">
+                                        <i class="fa-solid fa-edit"></i>
+                                    </button>
+                                    <button class="btn-outline-danger btn-sm">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="card-header">
+                        <h3>Kanban Board</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="kanban-board">
+                            <div class="kanban-column">
+                                <div class="kanban-column-header">
+                                    <h4>To Do</h4>
+                                    <span class="kanban-count">3</span>
+                                </div>
+                                <div class="kanban-cards">
+                                    <div class="kanban-card">
+                                        <h5 class="kanban-card-title">Review code changes</h5>
+                                        <p class="kanban-card-desc">Review pull requests and provide feedback</p>
+                                        <div class="kanban-card-footer">
+                                            <span class="task-priority task-priority-medium">Medium</span>
+                                            <span class="kanban-assignee">JD</span>
+                                        </div>
+                                    </div>
+                                    <div class="kanban-card">
+                                        <h5 class="kanban-card-title">Plan next sprint</h5>
+                                        <p class="kanban-card-desc">Organize tasks for the upcoming sprint</p>
+                                        <div class="kanban-card-footer">
+                                            <span class="task-priority task-priority-high">High</span>
+                                            <span class="kanban-assignee">SM</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="kanban-column">
+                                <div class="kanban-column-header">
+                                    <h4>In Progress</h4>
+                                    <span class="kanban-count">2</span>
+                                </div>
+                                <div class="kanban-cards">
+                                    <div class="kanban-card">
+                                        <h5 class="kanban-card-title">Fix bug in payment system</h5>
+                                        <p class="kanban-card-desc">Resolve issue with payment processing</p>
+                                        <div class="kanban-card-footer">
+                                            <span class="task-priority task-priority-high">High</span>
+                                            <span class="kanban-assignee">MJ</span>
+                                        </div>
+                                    </div>
+                                    <div class="kanban-card">
+                                        <h5 class="kanban-card-title">Add new features</h5>
+                                        <p class="kanban-card-desc">Implement requested features from users</p>
+                                        <div class="kanban-card-footer">
+                                            <span class="task-priority task-priority-medium">Medium</span>
+                                            <span class="kanban-assignee">SW</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="kanban-column">
+                                <div class="kanban-column-header">
+                                    <h4>Review</h4>
+                                    <span class="kanban-count">1</span>
+                                </div>
+                                <div class="kanban-cards">
+                                    <div class="kanban-card">
+                                        <h5 class="kanban-card-title">Test new functionality</h5>
+                                        <p class="kanban-card-desc">Perform comprehensive testing</p>
+                                        <div class="kanban-card-footer">
+                                            <span class="task-priority task-priority-medium">Medium</span>
+                                            <span class="kanban-assignee">DB</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="kanban-column">
+                                <div class="kanban-column-header">
+                                    <h4>Done</h4>
+                                    <span class="kanban-count">5</span>
+                                </div>
+                                <div class="kanban-cards">
+                                    <div class="kanban-card kanban-card-done">
+                                        <h5 class="kanban-card-title">Deploy to production</h5>
+                                        <p class="kanban-card-desc">Release latest version to production</p>
+                                        <div class="kanban-card-footer">
+                                            <span class="task-priority task-priority-high">High</span>
+                                            <span class="kanban-assignee">JD</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="copyright">© <span id="currentYear">2024</span> Liquid Glass Admin Template. All rights reserved.</p>
+            <p class="developer">
+                Developed with <i class="fa-solid fa-heart"></i> by 
+                <strong>
+                    <a href="https://www.linkedin.com/in/dexterity-wurayayi-967a64230" target="_blank" rel="noopener noreferrer" class="developer-link">
+                        DexterWura
+                        <i class="fa-brands fa-linkedin developer-link-icon"></i>
+                    </a>
+                </strong>
+            </p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+

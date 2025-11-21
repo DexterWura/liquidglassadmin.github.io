@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help & FAQ - Liquid Glass Admin Dashboard</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="logo-link">
+                <h1 class="logo">Liquid Glass</h1>
+            </a>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <i class="fa-solid fa-house nav-icon"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="analytics.html" class="nav-item">
+                <i class="fa-solid fa-chart-line nav-icon"></i>
+                <span>Analytics</span>
+            </a>
+            <a href="users.html" class="nav-item">
+                <i class="fa-solid fa-users nav-icon"></i>
+                <span>Users</span>
+            </a>
+            <a href="products.html" class="nav-item">
+                <i class="fa-solid fa-cube nav-icon"></i>
+                <span>Products</span>
+            </a>
+            <a href="orders.html" class="nav-item">
+                <i class="fa-solid fa-shopping-bag nav-icon"></i>
+                <span>Orders</span>
+            </a>
+            <a href="pos.html" class="nav-item">
+                <i class="fa-solid fa-cash-register nav-icon"></i>
+                <span>POS</span>
+            </a>
+            <a href="messages.html" class="nav-item">
+                <i class="fa-solid fa-envelope nav-icon"></i>
+                <span>Messages</span>
+            </a>
+            <a href="notifications.html" class="nav-item">
+                <i class="fa-solid fa-bell nav-icon"></i>
+                <span>Notifications</span>
+            </a>
+            <a href="calendar.html" class="nav-item">
+                <i class="fa-solid fa-calendar nav-icon"></i>
+                <span>Calendar</span>
+            </a>
+            <a href="reports.html" class="nav-item">
+                <i class="fa-solid fa-file-lines nav-icon"></i>
+                <span>Reports</span>
+            </a>
+            <a href="invoices.html" class="nav-item">
+                <i class="fa-solid fa-file-invoice nav-icon"></i>
+                <span>Invoices</span>
+            </a>
+            <a href="expenses.html" class="nav-item">
+                <i class="fa-solid fa-money-bill-wave nav-icon"></i>
+                <span>Expenses</span>
+            </a>
+            <a href="tasks.html" class="nav-item">
+                <i class="fa-solid fa-tasks nav-icon"></i>
+                <span>Tasks</span>
+            </a>
+            <a href="blog.html" class="nav-item">
+                <i class="fa-solid fa-blog nav-icon"></i>
+                <span>Blog</span>
+            </a>
+            <a href="help.html" class="nav-item active">
+                <i class="fa-solid fa-circle-question nav-icon"></i>
+                <span>Help</span>
+            </a>
+            <a href="tables.html" class="nav-item">
+                <i class="fa-solid fa-table nav-icon"></i>
+                <span>Tables</span>
+            </a>
+            <a href="forms.html" class="nav-item">
+                <i class="fa-solid fa-file-pen nav-icon"></i>
+                <span>Forms</span>
+            </a>
+            <a href="buttons.html" class="nav-item">
+                <i class="fa-solid fa-hand-pointer nav-icon"></i>
+                <span>Buttons</span>
+            </a>
+            <a href="progress.html" class="nav-item">
+                <i class="fa-solid fa-bars-progress nav-icon"></i>
+                <span>Progress</span>
+            </a>
+            <a href="profile.html" class="nav-item">
+                <i class="fa-solid fa-user nav-icon"></i>
+                <span>Profile</span>
+            </a>
+            <a href="modals.html" class="nav-item">
+                <i class="fa-solid fa-window-maximize nav-icon"></i>
+                <span>Modals</span>
+            </a>
+            <a href="settings.html" class="nav-item">
+                <i class="fa-solid fa-gear nav-icon"></i>
+                <span>Settings</span>
+            </a>
+        </nav>
+        <div class="sidebar-version">v1.0.2</div>
+    </aside>
+
+    <main class="main-content">
+        <header class="top-bar">
+            <div class="top-bar-left">
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <h2 class="page-title">Help & FAQ</h2>
+            </div>
+            <div class="top-bar-right">
+                <button class="search-bar-toggle" aria-label="Toggle search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" placeholder="Search help articles...">
+                </div>
+                <button class="notification-btn">
+                    <i class="fa-solid fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+                <div class="user-profile">
+                    <img src="https://ui-avatars.com/api/?name=Admin&background=random" alt="User" class="profile-img">
+                </div>
+            </div>
+        </header>
+
+        <nav class="breadcrumbs">
+            <a href="index.html">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+            <span class="breadcrumb-separator">
+                <i class="fa-solid fa-chevron-right"></i>
+            </span>
+            <a href="dashboard.html">Dashboard</a>
+            <span class="breadcrumb-separator">
+                <i class="fa-solid fa-chevron-right"></i>
+            </span>
+            <span class="breadcrumb-current">Help & FAQ</span>
+        </nav>
+
+        <div class="dashboard-content">
+            <section class="additional-cards">
+                <div class="info-card">
+                    <div class="card-header">
+                        <h3>Quick Help Categories</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="help-categories-grid">
+                            <div class="help-category-card">
+                                <div class="help-category-icon">
+                                    <i class="fa-solid fa-rocket"></i>
+                                </div>
+                                <h4 class="help-category-title">Getting Started</h4>
+                                <p class="help-category-desc">Learn the basics and get up and running quickly</p>
+                            </div>
+
+                            <div class="help-category-card">
+                                <div class="help-category-icon">
+                                    <i class="fa-solid fa-user-gear"></i>
+                                </div>
+                                <h4 class="help-category-title">Account Settings</h4>
+                                <p class="help-category-desc">Manage your account, profile, and preferences</p>
+                            </div>
+
+                            <div class="help-category-card">
+                                <div class="help-category-icon">
+                                    <i class="fa-solid fa-chart-line"></i>
+                                </div>
+                                <h4 class="help-category-title">Analytics & Reports</h4>
+                                <p class="help-category-desc">Understand your data and generate reports</p>
+                            </div>
+
+                            <div class="help-category-card">
+                                <div class="help-category-icon">
+                                    <i class="fa-solid fa-cube"></i>
+                                </div>
+                                <h4 class="help-category-title">Products & Inventory</h4>
+                                <p class="help-category-desc">Manage products, inventory, and stock levels</p>
+                            </div>
+
+                            <div class="help-category-card">
+                                <div class="help-category-icon">
+                                    <i class="fa-solid fa-shopping-bag"></i>
+                                </div>
+                                <h4 class="help-category-title">Orders & Payments</h4>
+                                <p class="help-category-desc">Process orders and handle payments</p>
+                            </div>
+
+                            <div class="help-category-card">
+                                <div class="help-category-icon">
+                                    <i class="fa-solid fa-wrench"></i>
+                                </div>
+                                <h4 class="help-category-title">Troubleshooting</h4>
+                                <p class="help-category-desc">Common issues and how to resolve them</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="card-header">
+                        <h3>Frequently Asked Questions</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="faq-accordion">
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>How do I customize the dashboard?</span>
+                                    <i class="fa-solid fa-chevron-down faq-icon"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>You can customize the dashboard by editing the CSS variables in the style.css file. All colors, spacing, and design tokens are defined in the :root section at the top of the stylesheet.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>How do I add new pages to the template?</span>
+                                    <i class="fa-solid fa-chevron-down faq-icon"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>To add a new page, create a new HTML file following the structure of existing pages. Include the sidebar navigation, top bar, and footer. Then add a navigation link in the sidebar-nav section of all pages.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>Can I use this template for commercial projects?</span>
+                                    <i class="fa-solid fa-chevron-down faq-icon"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Yes, this template is released under the MIT License, which allows you to use it for both personal and commercial projects without restrictions.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>How do I integrate with a backend API?</span>
+                                    <i class="fa-solid fa-chevron-down faq-icon"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>You can integrate with any backend API using JavaScript fetch() or XMLHttpRequest. The template uses vanilla JavaScript, making it easy to add API calls. Check the main.js file for examples of data handling.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>How do I change the color scheme?</span>
+                                    <i class="fa-solid fa-chevron-down faq-icon"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Edit the CSS variables in the :root section of style.css. Change --primary-color, --secondary-color, and other color variables to match your brand colors.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>Is the template mobile responsive?</span>
+                                    <i class="fa-solid fa-chevron-down faq-icon"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Yes, the template is fully responsive with breakpoints at 1440px, 1200px, 768px, 480px, and 360px. All components adapt to different screen sizes automatically.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>How do I add authentication?</span>
+                                    <i class="fa-solid fa-chevron-down faq-icon"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>You can add authentication by integrating with your backend API. The login.html and signup.html pages are provided as starting points. Add your authentication logic in JavaScript to handle login, logout, and session management.</p>
+                                </div>
+                            </div>
+
+                            <div class="faq-item">
+                                <button class="faq-question">
+                                    <span>Can I remove the sidebar navigation?</span>
+                                    <i class="fa-solid fa-chevron-down faq-icon"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <p>Yes, you can hide or remove the sidebar by modifying the CSS. Set display: none on the .sidebar class, and adjust the .main-content margin-left accordingly.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="card-header">
+                        <h3>Contact Support</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="help-contact-info">
+                            <div class="help-contact-item">
+                                <div class="help-contact-icon">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div class="help-contact-details">
+                                    <h4>Email Support</h4>
+                                    <p>support@liquidglass.com</p>
+                                    <span>We respond within 24 hours</span>
+                                </div>
+                            </div>
+
+                            <div class="help-contact-item">
+                                <div class="help-contact-icon">
+                                    <i class="fa-solid fa-comments"></i>
+                                </div>
+                                <div class="help-contact-details">
+                                    <h4>Live Chat</h4>
+                                    <p>Available Monday - Friday, 9 AM - 6 PM</p>
+                                    <span>Click to start a chat</span>
+                                </div>
+                            </div>
+
+                            <div class="help-contact-item">
+                                <div class="help-contact-icon">
+                                    <i class="fa-solid fa-book"></i>
+                                </div>
+                                <div class="help-contact-details">
+                                    <h4>Documentation</h4>
+                                    <p>Comprehensive guides and tutorials</p>
+                                    <span>Visit our documentation site</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="copyright">© <span id="currentYear">2024</span> Liquid Glass Admin Template. All rights reserved.</p>
+            <p class="developer">
+                Developed with <i class="fa-solid fa-heart"></i> by 
+                <strong>
+                    <a href="https://www.linkedin.com/in/dexterity-wurayayi-967a64230" target="_blank" rel="noopener noreferrer" class="developer-link">
+                        DexterWura
+                        <i class="fa-brands fa-linkedin developer-link-icon"></i>
+                    </a>
+                </strong>
+            </p>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+

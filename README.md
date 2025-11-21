@@ -280,7 +280,7 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 - Updated copyright year to display current year dynamically
 - Fixed calendar visibility on mobile devices
 - Fixed hamburger menu toggle on analytics page
-- Improved code organization and removed unnecessary comments
+- Improved code organization 
 
 ### Version 1.0.0
 

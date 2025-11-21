@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoices - Liquid Glass Admin Dashboard</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <a href="index.html" class="logo-link">
+                <h1 class="logo">Liquid Glass</h1>
+            </a>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <i class="fa-solid fa-house nav-icon"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="analytics.html" class="nav-item">
+                <i class="fa-solid fa-chart-line nav-icon"></i>
+                <span>Analytics</span>
+            </a>
+            <a href="users.html" class="nav-item">
+                <i class="fa-solid fa-users nav-icon"></i>
+                <span>Users</span>
+            </a>
+            <a href="products.html" class="nav-item">
+                <i class="fa-solid fa-cube nav-icon"></i>
+                <span>Products</span>
+            </a>
+            <a href="orders.html" class="nav-item">
+                <i class="fa-solid fa-shopping-bag nav-icon"></i>
+                <span>Orders</span>
+            </a>
+            <a href="pos.html" class="nav-item">
+                <i class="fa-solid fa-cash-register nav-icon"></i>
+                <span>POS</span>
+            </a>
+            <a href="messages.html" class="nav-item">
+                <i class="fa-solid fa-envelope nav-icon"></i>
+                <span>Messages</span>
+            </a>
+            <a href="notifications.html" class="nav-item">
+                <i class="fa-solid fa-bell nav-icon"></i>
+                <span>Notifications</span>
+            </a>
+            <a href="calendar.html" class="nav-item">
+                <i class="fa-solid fa-calendar nav-icon"></i>
+                <span>Calendar</span>
+            </a>
+            <a href="reports.html" class="nav-item">
+                <i class="fa-solid fa-file-lines nav-icon"></i>
+                <span>Reports</span>
+            </a>
+            <a href="invoices.html" class="nav-item active">
+                <i class="fa-solid fa-file-invoice nav-icon"></i>
+                <span>Invoices</span>
+            </a>
+            <a href="expenses.html" class="nav-item">
+                <i class="fa-solid fa-money-bill-wave nav-icon"></i>
+                <span>Expenses</span>
+            </a>
+            <a href="tasks.html" class="nav-item">
+                <i class="fa-solid fa-tasks nav-icon"></i>
+                <span>Tasks</span>
+            </a>
+            <a href="blog.html" class="nav-item">
+                <i class="fa-solid fa-blog nav-icon"></i>
+                <span>Blog</span>
+            </a>
+            <a href="help.html" class="nav-item">
+                <i class="fa-solid fa-circle-question nav-icon"></i>
+                <span>Help</span>
+            </a>
+            <a href="tables.html" class="nav-item">
+                <i class="fa-solid fa-table nav-icon"></i>
+                <span>Tables</span>
+            </a>
+            <a href="forms.html" class="nav-item">
+                <i class="fa-solid fa-file-pen nav-icon"></i>
+                <span>Forms</span>
+            </a>
+            <a href="buttons.html" class="nav-item">
+                <i class="fa-solid fa-hand-pointer nav-icon"></i>
+                <span>Buttons</span>
+            </a>
+            <a href="progress.html" class="nav-item">
+                <i class="fa-solid fa-bars-progress nav-icon"></i>
+                <span>Progress</span>
+            </a>
+            <a href="profile.html" class="nav-item">
+                <i class="fa-solid fa-user nav-icon"></i>
+                <span>Profile</span>
+            </a>
+            <a href="modals.html" class="nav-item">
+                <i class="fa-solid fa-window-maximize nav-icon"></i>
+                <span>Modals</span>
+            </a>
+            <a href="settings.html" class="nav-item">
+                <i class="fa-solid fa-gear nav-icon"></i>
+                <span>Settings</span>
+            </a>
+        </nav>
+        <div class="sidebar-version">v1.0.2</div>
+    </aside>
+
+    <main class="main-content">
+        <header class="top-bar">
+            <div class="top-bar-left">
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <h2 class="page-title">Invoices</h2>
+            </div>
+            <div class="top-bar-right">
+                <button class="search-bar-toggle" aria-label="Toggle search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" placeholder="Search invoices...">
+                </div>
+                <button class="notification-btn">
+                    <i class="fa-solid fa-bell"></i>
+                    <span class="notification-badge">3</span>
+                </button>
+                <button class="notification-btn btn-primary">
+                    <i class="fa-solid fa-plus"></i> Create Invoice
+                </button>
+                <div class="user-profile">
+                    <img src="https://ui-avatars.com/api/?name=Admin&background=random" alt="User" class="profile-img">
+                </div>
+            </div>
+        </header>
+
+        <nav class="breadcrumbs">
+            <a href="index.html">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+            <span class="breadcrumb-separator">
+                <i class="fa-solid fa-chevron-right"></i>
+            </span>
+            <a href="dashboard.html">Dashboard</a>
+            <span class="breadcrumb-separator">
+                <i class="fa-solid fa-chevron-right"></i>
+            </span>
+            <span class="breadcrumb-current">Invoices</span>
+        </nav>
+
+        <div class="dashboard-content">
+            <section class="stats-section">
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <h3>Total Invoices</h3>
+                        <i class="fa-solid fa-file-invoice stat-icon"></i>
+                    </div>
+                    <div class="stat-card-body">
+                        <p class="stat-value">156</p>
+                        <p class="stat-change positive">+12 this month</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <h3>Paid</h3>
+                        <i class="fa-solid fa-check-circle stat-icon"></i>
+                    </div>
+                    <div class="stat-card-body">
+                        <p class="stat-value">128</p>
+                        <p class="stat-change positive">82.1% paid</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <h3>Pending</h3>
+                        <i class="fa-solid fa-clock stat-icon"></i>
+                    </div>
+                    <div class="stat-card-body">
+                        <p class="stat-value">18</p>
+                        <p class="stat-change negative">11.5% pending</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-card-header">
+                        <h3>Total Amount</h3>
+                        <i class="fa-solid fa-dollar-sign stat-icon"></i>
+                    </div>
+                    <div class="stat-card-body">
+                        <p class="stat-value">$89,450</p>
+                        <p class="stat-change positive">+15.2% from last month</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="additional-cards">
+                <div class="info-card">
+                    <div class="card-header">
+                        <h3>All Invoices</h3>
+                        <div class="filter-controls">
+                            <select class="filter-select">
+                                <option>All Status</option>
+                                <option>Paid</option>
+                                <option>Pending</option>
+                                <option>Overdue</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="card-body table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Invoice #</th>
+                                    <th>Client</th>
+                                    <th>Date</th>
+                                    <th>Due Date</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>#INV-2024-001</strong></td>
+                                    <td>ABC Corporation</td>
+                                    <td>Dec 10, 2024</td>
+                                    <td>Dec 25, 2024</td>
+                                    <td class="text-primary">$2,450.00</td>
+                                    <td><span class="status-badge status-badge-success">Paid</span></td>
+                                    <td>
+                                        <button class="table-action-btn btn-outline-primary btn-sm">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </button>
+                                        <button class="table-action-btn btn-outline-primary btn-sm">
+                                            <i class="fa-solid fa-download"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>#INV-2024-002</strong></td>
+                                    <td>XYZ Enterprises</td>
+                                    <td>Dec 12, 2024</td>
+                                    <td>Dec 27, 2024</td>
+                                    <td class="text-primary">$3,890.00</td>
+                                    <td><span class="status-badge status-badge-warning">Pending</span></td>
+                                    <td>
+                                        <button class="table-action-btn btn-outline-primary btn-sm">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </button>
+                                        <button class="table-action-btn btn-outline-primary btn-sm">
+                                            <i class="fa-solid fa-download"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>#INV-2024-003</strong></td>
+                                    <td>Tech Solutions Ltd</td>
+                                    <td>Dec 8, 2024</td>
+                                    <td>Dec 23, 2024</td>
+                                    <td class="text-primary">$1,250.00</td>
+                                    <td><span class="status-badge status-badge-success">Paid</span></td>
+                                    <td>
+                                        <button class="table-action-btn btn-outline-primary btn-sm">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </button>
+                                        <button class="table-action-btn btn-outline-primary btn-sm">
+                                            <i class="fa-solid fa-download"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>#INV-2024-004</strong></td>
+                                    <td>Global Services Inc</td>
+                                    <td>Dec 5, 2024</td>
+                                    <td>Dec 20, 2024</td>
+                                    <td class="text-primary">$5,600.00</td>
+                                    <td><span class="status-badge status-badge-danger">Overdue</span></td>
+                                    <td>
+                                        <button class="table-action-btn btn-outline-primary btn-sm">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </button>
+                                        <button class="table-action-btn btn-outline-primary btn-sm">
+                                            <i class="fa-solid fa-download"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>#INV-2024-005</strong></td>
+                                    <td>Digital Marketing Co</td>
+                                    <td>Dec 14, 2024</td>
+                                    <td>Dec 29, 2024</td>
+                                    <td class="text-primary">$890.00</td>
+                                    <td><span class="status-badge status-badge-warning">Pending</span></td>
+                                    <td>
+                                        <button class="table-action-btn btn-outline-primary btn-sm">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </button>
+                                        <button class="table-action-btn btn-outline-primary btn-sm">
+                                            <i class="fa-solid fa-download"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>#INV-2024-006</strong></td>
+                                    <td>Creative Agency</td>
+                                    <td>Dec 11, 2024</td>
+                                    <td>Dec 26, 2024</td>
+                                    <td class="text-primary">$2,100.00</td>
+                                    <td><span class="status-badge status-badge-success">Paid</span></td>
+                                    <td>
+                                        <button class="table-action-btn btn-outline-primary btn-sm">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </button>
+                                        <button class="table-action-btn btn-outline-primary btn-sm">
+                                            <i class="fa-solid fa-download"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="card-header">
+                        <h3>Invoice Summary</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="invoice-summary-stats">
+                            <div class="invoice-summary-item">
+                                <div class="invoice-summary-label">Total Invoiced</div>
+                                <div class="invoice-summary-value">$89,450.00</div>
+                            </div>
+                            <div class="invoice-summary-item">
+                                <div class="invoice-summary-label">Paid Amount</div>
+                                <div class="invoice-summary-value text-success">$73,450.00</div>
+                            </div>
+                            <div class="invoice-summary-item">
+                                <div class="invoice-summary-label">Pending Amount</div>
+                                <div class="invoice-summary-value text-warning">$12,680.00</div>
+                            </div>
+                            <div class="invoice-summary-item">
+                                <div class="invoice-summary-label">Overdue Amount</div>
+                                <div class="invoice-summary-value text-danger">$3,320.00</div>
+                            </div>
+                        </div>
+                        <div class="invoice-summary-chart">
+                            <canvas id="invoiceChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="copyright">© <span id="currentYear">2024</span> Liquid Glass Admin Template. All rights reserved.</p>
+            <p class="developer">
+                Developed with <i class="fa-solid fa-heart"></i> by 
+                <strong>
+                    <a href="https://www.linkedin.com/in/dexterity-wurayayi-967a64230" target="_blank" rel="noopener noreferrer" class="developer-link">
+                        DexterWura
+                        <i class="fa-brands fa-linkedin developer-link-icon"></i>
+                    </a>
+                </strong>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+
