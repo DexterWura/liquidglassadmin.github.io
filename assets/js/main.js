@@ -149,20 +149,7 @@ document.addEventListener('DOMContentLoaded', function() {
             this.setAttribute('aria-pressed', 'true');
             
             const ripple = document.createElement('span');
-            ripple.style.cssText = `
-                position: absolute;
-                border-radius: 50%;
-                background: rgba(255, 255, 255, 0.6);
-                transform: scale(0);
-                animation: ripple 0.6s ease-out;
-                pointer-events: none;
-                width: 20px;
-                height: 20px;
-                left: 50%;
-                top: 50%;
-                margin-left: -10px;
-                margin-top: -10px;
-            `;
+            ripple.className = 'chart-btn-ripple';
             this.style.position = 'relative';
             this.style.overflow = 'hidden';
             this.appendChild(ripple);
@@ -170,20 +157,6 @@ document.addEventListener('DOMContentLoaded', function() {
             setTimeout(() => ripple.remove(), 600);
         }, { passive: false });
     });
-    
-    if (!document.getElementById('ripple-animation')) {
-        const style = document.createElement('style');
-        style.id = 'ripple-animation';
-        style.textContent = `
-            @keyframes ripple {
-                to {
-                    transform: scale(4);
-                    opacity: 0;
-                }
-            }
-        `;
-        document.head.appendChild(style);
-    }
 
     initRevenueChart();
     initActivityChart();
@@ -457,20 +430,9 @@ const progressObserver = new IntersectionObserver((entries) => {
     });
 }, progressObserverOptions);
 
-document.querySelectorAll('.product-item').forEach(item => {
+document.querySelectorAll('.product-item, .progress-item').forEach(item => {
     progressObserver.observe(item);
 });
-
-let scrollTimeout;
-const optimizedScrollHandler = () => {
-    if (scrollTimeout) {
-        cancelAnimationFrame(scrollTimeout);
-    }
-    scrollTimeout = requestAnimationFrame(() => {
-    });
-};
-
-window.addEventListener('scroll', optimizedScrollHandler, { passive: true });
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -502,26 +464,8 @@ const addScrollToTop = () => {
     const button = document.createElement('button');
     button.innerHTML = '<i class="fa-solid fa-arrow-up"></i>';
     button.className = 'scroll-to-top';
-    button.style.cssText = `
-        position: fixed;
-        bottom: 2rem;
-        right: 2rem;
-        width: 48px;
-        height: 48px;
-        border-radius: 50%;
-        background: var(--primary-color);
-        color: white;
-        border: none;
-        cursor: pointer;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
-        z-index: 999;
-        transition: all 0.3s ease;
-        opacity: 0;
-        transform: translateY(20px);
-    `;
+    button.style.opacity = '0';
+    button.style.transform = 'translateY(20px)';
     button.setAttribute('aria-label', 'Scroll to top');
     document.body.appendChild(button);
     
@@ -532,13 +476,11 @@ const addScrollToTop = () => {
                 const scrollY = window.scrollY || window.pageYOffset;
                 if (scrollY > 300) {
                     button.style.display = 'flex';
-                    setTimeout(() => {
-                        button.style.opacity = '1';
-                        button.style.transform = 'translateY(0)';
-                    }, 10);
+                    requestAnimationFrame(() => {
+                        button.classList.add('is-visible');
+                    });
                 } else {
-                    button.style.opacity = '0';
-                    button.style.transform = 'translateY(20px)';
+                    button.classList.remove('is-visible');
                     setTimeout(() => {
                         if (window.scrollY < 300) {
                             button.style.display = 'none';
@@ -554,15 +496,6 @@ const addScrollToTop = () => {
     window.addEventListener('scroll', handleScroll, { passive: true });
     button.addEventListener('click', scrollToTop);
     
-    button.addEventListener('mouseenter', () => {
-        button.style.transform = 'translateY(-4px) scale(1.1)';
-        button.style.boxShadow = '0 6px 20px rgba(0, 122, 255, 0.4)';
-    });
-    
-    button.addEventListener('mouseleave', () => {
-        button.style.transform = 'translateY(0) scale(1)';
-        button.style.boxShadow = '0 4px 12px rgba(0, 122, 255, 0.3)';
-    });
 };
 
 addScrollToTop();

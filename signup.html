@@ -11,8 +11,8 @@
     <div class="auth-container">
         <div class="auth-card">
             <div class="auth-header">
-                <h1 class="logo" style="font-size: 2rem; margin-bottom: 0.5rem;">Liquid Glass</h1>
-                <p style="color: var(--text-secondary); margin: 0;">Create your account to get started.</p>
+                <h1 class="logo auth-logo">Liquid Glass</h1>
+                <p class="auth-subtitle">Create your account to get started.</p>
             </div>
 
             <form class="auth-form">
@@ -34,9 +34,9 @@
                     <label for="password">
                         <i class="fa-solid fa-lock"></i> Password
                     </label>
-                    <div style="position: relative;">
-                        <input type="password" id="password" name="password" placeholder="Create a password" required style="padding-right: 3rem;">
-                        <button type="button" class="password-toggle" onclick="togglePassword('password')">
+                    <div class="input-with-toggle">
+                        <input type="password" id="password" name="password" placeholder="Create a password" required>
+                        <button type="button" class="password-toggle" data-toggle-password="password">
                             <i class="fa-solid fa-eye" id="passwordToggleIcon"></i>
                         </button>
                     </div>
@@ -46,18 +46,18 @@
                     <label for="confirmPassword">
                         <i class="fa-solid fa-lock"></i> Confirm Password
                     </label>
-                    <div style="position: relative;">
-                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required style="padding-right: 3rem;">
-                        <button type="button" class="password-toggle" onclick="togglePassword('confirmPassword')">
+                    <div class="input-with-toggle">
+                        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+                        <button type="button" class="password-toggle" data-toggle-password="confirmPassword">
                             <i class="fa-solid fa-eye" id="confirmPasswordToggleIcon"></i>
                         </button>
                     </div>
                 </div>
 
-                <div style="margin-bottom: 1.5rem;">
-                    <label style="display: flex; align-items: flex-start; gap: 0.75rem; cursor: pointer; font-size: 0.9rem; color: var(--text-secondary);">
-                        <input type="checkbox" style="margin-top: 0.25rem; cursor: pointer;" required>
-                        <span>I agree to the <a href="#" style="color: var(--primary-color); text-decoration: none;">Terms of Service</a> and <a href="#" style="color: var(--primary-color); text-decoration: none;">Privacy Policy</a></span>
+                <div class="auth-section-spacer">
+                    <label class="auth-checkbox-label auth-checkbox-label-top">
+                        <input type="checkbox" class="auth-checkbox auth-checkbox-offset" required>
+                        <span>I agree to the <a href="#" class="auth-link">Terms of Service</a> and <a href="#" class="auth-link">Privacy Policy</a></span>
                     </label>
                 </div>
 
@@ -66,50 +66,21 @@
                     <i class="fa-solid fa-arrow-right"></i>
                 </button>
 
-                <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--glass-border);">
-                    <p style="color: var(--text-secondary); margin: 0 0 1rem 0;">Already have an account?</p>
-                    <a href="login.html" style="color: var(--primary-color); text-decoration: none; font-weight: 500;">Sign in instead</a>
+                <div class="auth-divider">
+                    <p class="auth-divider-text">Already have an account?</p>
+                    <a href="login.html" class="auth-link">Sign in instead</a>
                 </div>
             </form>
 
-            <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--glass-border);">
-                <p style="text-align: center; color: var(--text-tertiary); font-size: 0.85rem; margin: 0;">
+            <div class="auth-security-note">
+                <p>
                     <i class="fa-solid fa-shield-halved"></i> Your data is secure and encrypted
                 </p>
             </div>
         </div>
     </div>
 
-    <script>
-        function togglePassword(fieldId) {
-            const passwordInput = document.getElementById(fieldId);
-            const toggleIcon = document.getElementById(fieldId === 'password' ? 'passwordToggleIcon' : 'confirmPasswordToggleIcon');
-            
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text';
-                toggleIcon.classList.remove('fa-eye');
-                toggleIcon.classList.add('fa-eye-slash');
-            } else {
-                passwordInput.type = 'password';
-                toggleIcon.classList.remove('fa-eye-slash');
-                toggleIcon.classList.add('fa-eye');
-            }
-        }
-
-        document.querySelector('.auth-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const password = document.getElementById('password').value;
-            const confirmPassword = document.getElementById('confirmPassword').value;
-            
-            if (password !== confirmPassword) {
-                alert('Passwords do not match!');
-                return;
-            }
-            
-            // Add your signup logic here
-            window.location.href = 'dashboard.html';
-        });
-    </script>
+    <script src="assets/js/auth.js"></script>
 </body>
 </html>
 

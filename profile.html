@@ -116,7 +116,7 @@
         <!-- Top Bar -->
         <header class="top-bar">
             <div class="top-bar-left">
-                <button class="menu-toggle" id="menuToggle">
+                <button type="button" class="menu-toggle" id="menuToggle" aria-label="Open navigation menu">
                     <i class="fa-solid fa-bars"></i>
                 </button>
                 <h2 class="page-title">Profile</h2>
@@ -126,7 +126,7 @@
                     <i class="fa-solid fa-magnifying-glass search-icon"></i>
                     <input type="text" placeholder="Search...">
                 </div>
-                <button class="notification-btn">
+                <button type="button" class="notification-btn" aria-label="Open notifications">
                     <i class="fa-solid fa-bell"></i>
                     <span class="notification-badge">3</span>
                 </button>
@@ -154,50 +154,50 @@
 
         <!-- Profile Content -->
         <div class="dashboard-content">
-            <section class="additional-cards" style="grid-template-columns: 350px 1fr; gap: 1.5rem;">
+            <section class="additional-cards profile-layout">
                 <!-- Profile Sidebar -->
                 <div>
-                    <div class="info-card" style="text-align: center; padding: 2rem;">
-                        <img src="https://ui-avatars.com/api/?name=Admin+User&size=150&background=007aff" alt="Profile" style="width: 150px; height: 150px; border-radius: 50%; border: 4px solid var(--glass-border); margin-bottom: 1.5rem;">
-                        <h3 style="margin: 0 0 0.5rem 0; color: var(--text-primary);">Admin User</h3>
-                        <p style="margin: 0 0 1.5rem 0; color: var(--text-secondary);">admin@example.com</p>
-                        <button style="width: 100%; padding: 0.875rem; background: var(--primary-color); color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 500; margin-bottom: 1rem;">
+                    <div class="info-card profile-card">
+                        <img src="https://ui-avatars.com/api/?name=Admin+User&size=150&background=007aff" alt="Profile avatar" class="profile-avatar-lg" loading="lazy">
+                        <h3 class="profile-name">Admin User</h3>
+                        <p class="profile-email">admin@example.com</p>
+                        <button type="button" class="btn-primary-block">
                             <i class="fa-solid fa-edit"></i> Edit Profile
                         </button>
-                        <div style="display: flex; gap: 0.5rem; justify-content: center;">
-                            <button style="padding: 0.75rem; background: rgba(0, 0, 0, 0.04); border: 1px solid var(--glass-border); border-radius: 8px; cursor: pointer; color: var(--text-primary);">
+                        <div class="icon-btn-row">
+                            <button type="button" class="icon-btn" aria-label="Open Twitter profile">
                                 <i class="fa-brands fa-twitter"></i>
                             </button>
-                            <button style="padding: 0.75rem; background: rgba(0, 0, 0, 0.04); border: 1px solid var(--glass-border); border-radius: 8px; cursor: pointer; color: var(--text-primary);">
+                            <button type="button" class="icon-btn" aria-label="Open LinkedIn profile">
                                 <i class="fa-brands fa-linkedin"></i>
                             </button>
-                            <button style="padding: 0.75rem; background: rgba(0, 0, 0, 0.04); border: 1px solid var(--glass-border); border-radius: 8px; cursor: pointer; color: var(--text-primary);">
+                            <button type="button" class="icon-btn" aria-label="Open GitHub profile">
                                 <i class="fa-brands fa-github"></i>
                             </button>
                         </div>
                     </div>
 
-                    <div class="info-card" style="margin-top: 1.5rem;">
+                    <div class="info-card profile-section-gap">
                         <div class="card-header">
                             <h3>Statistics</h3>
                         </div>
                         <div class="card-body">
-                            <div style="padding: 1rem; background: rgba(0, 0, 0, 0.02); border-radius: 12px; margin-bottom: 0.75rem;">
-                                <div style="display: flex; justify-content: space-between; align-items: center;">
-                                    <span style="font-size: 0.9rem; color: var(--text-secondary);">Projects</span>
-                                    <strong style="font-size: 1.25rem; color: var(--text-primary);">24</strong>
+                            <div class="profile-stat-row">
+                                <div class="profile-stat-inner">
+                                    <span class="profile-stat-label">Projects</span>
+                                    <strong class="profile-stat-value">24</strong>
                                 </div>
                             </div>
-                            <div style="padding: 1rem; background: rgba(0, 0, 0, 0.02); border-radius: 12px; margin-bottom: 0.75rem;">
-                                <div style="display: flex; justify-content: space-between; align-items: center;">
-                                    <span style="font-size: 0.9rem; color: var(--text-secondary);">Tasks</span>
-                                    <strong style="font-size: 1.25rem; color: var(--text-primary);">156</strong>
+                            <div class="profile-stat-row">
+                                <div class="profile-stat-inner">
+                                    <span class="profile-stat-label">Tasks</span>
+                                    <strong class="profile-stat-value">156</strong>
                                 </div>
                             </div>
-                            <div style="padding: 1rem; background: rgba(0, 0, 0, 0.02); border-radius: 12px;">
-                                <div style="display: flex; justify-content: space-between; align-items: center;">
-                                    <span style="font-size: 0.9rem; color: var(--text-secondary);">Completed</span>
-                                    <strong style="font-size: 1.25rem; color: var(--text-primary);">142</strong>
+                            <div class="profile-stat-row">
+                                <div class="profile-stat-inner">
+                                    <span class="profile-stat-label">Completed</span>
+                                    <strong class="profile-stat-value">142</strong>
                                 </div>
                             </div>
                         </div>
@@ -209,45 +209,45 @@
                     <div class="info-card">
                         <div class="card-header">
                             <h3>About</h3>
-                            <button style="padding: 0.5rem 1rem; background: var(--primary-color); color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 0.85rem;">
+                            <button type="button" class="profile-edit-btn">
                                 <i class="fa-solid fa-edit"></i> Edit
                             </button>
                         </div>
                         <div class="card-body">
-                            <p style="margin: 0 0 1.5rem 0; color: var(--text-secondary); line-height: 1.6;">Experienced admin professional with a passion for creating beautiful user interfaces and managing complex systems. Always striving for excellence and innovation.</p>
-                            <div style="display: grid; gap: 1rem;">
-                                <div style="display: flex; align-items: center; gap: 1rem;">
-                                    <i class="fa-solid fa-briefcase" style="color: var(--primary-color); width: 20px;"></i>
+                            <p class="profile-about-text">Experienced admin professional with a passion for creating beautiful user interfaces and managing complex systems. Always striving for excellence and innovation.</p>
+                            <div class="profile-meta-list">
+                                <div class="profile-meta-item">
+                                    <i class="fa-solid fa-briefcase profile-meta-icon"></i>
                                     <div>
-                                        <p style="margin: 0; font-weight: 500; color: var(--text-primary);">Senior Administrator</p>
-                                        <p style="margin: 0; font-size: 0.85rem; color: var(--text-tertiary);">Liquid Glass Inc.</p>
+                                        <p class="profile-meta-title">Senior Administrator</p>
+                                        <p class="profile-meta-subtitle">Liquid Glass Inc.</p>
                                     </div>
                                 </div>
-                                <div style="display: flex; align-items: center; gap: 1rem;">
-                                    <i class="fa-solid fa-location-dot" style="color: var(--primary-color); width: 20px;"></i>
+                                <div class="profile-meta-item">
+                                    <i class="fa-solid fa-location-dot profile-meta-icon"></i>
                                     <div>
-                                        <p style="margin: 0; font-weight: 500; color: var(--text-primary);">San Francisco, CA</p>
-                                        <p style="margin: 0; font-size: 0.85rem; color: var(--text-tertiary);">United States</p>
+                                        <p class="profile-meta-title">San Francisco, CA</p>
+                                        <p class="profile-meta-subtitle">United States</p>
                                     </div>
                                 </div>
-                                <div style="display: flex; align-items: center; gap: 1rem;">
-                                    <i class="fa-solid fa-calendar" style="color: var(--primary-color); width: 20px;"></i>
+                                <div class="profile-meta-item">
+                                    <i class="fa-solid fa-calendar profile-meta-icon"></i>
                                     <div>
-                                        <p style="margin: 0; font-weight: 500; color: var(--text-primary);">Joined January 2020</p>
-                                        <p style="margin: 0; font-size: 0.85rem; color: var(--text-tertiary);">4 years ago</p>
+                                        <p class="profile-meta-title">Joined January 2020</p>
+                                        <p class="profile-meta-subtitle">4 years ago</p>
                                     </div>
                                 </div>
-                                <div style="display: flex; align-items: center; gap: 1rem;">
-                                    <i class="fa-solid fa-phone" style="color: var(--primary-color); width: 20px;"></i>
+                                <div class="profile-meta-item">
+                                    <i class="fa-solid fa-phone profile-meta-icon"></i>
                                     <div>
-                                        <p style="margin: 0; font-weight: 500; color: var(--text-primary);">+1 (555) 123-4567</p>
+                                        <p class="profile-meta-title">+1 (555) 123-4567</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="info-card" style="margin-top: 1.5rem;">
+                    <div class="info-card profile-section-gap">
                         <div class="card-header">
                             <h3>Activity</h3>
                             <a href="#" class="view-all">View All</a>
@@ -255,8 +255,8 @@
                         <div class="card-body">
                             <div class="transaction-item">
                                 <div class="transaction-info">
-                                    <div class="transaction-avatar" style="background: #007aff;">
-                                        <i class="fa-solid fa-file-export" style="color: white; font-size: 0.8rem;"></i>
+                                    <div class="transaction-avatar activity-avatar-primary">
+                                        <i class="fa-solid fa-file-export activity-avatar-icon"></i>
                                     </div>
                                     <div>
                                         <p class="transaction-name">Exported report</p>
@@ -266,8 +266,8 @@
                             </div>
                             <div class="transaction-item">
                                 <div class="transaction-info">
-                                    <div class="transaction-avatar" style="background: #10b981;">
-                                        <i class="fa-solid fa-user-plus" style="color: white; font-size: 0.8rem;"></i>
+                                    <div class="transaction-avatar activity-avatar-success">
+                                        <i class="fa-solid fa-user-plus activity-avatar-icon"></i>
                                     </div>
                                     <div>
                                         <p class="transaction-name">Added new user</p>
@@ -277,8 +277,8 @@
                             </div>
                             <div class="transaction-item">
                                 <div class="transaction-info">
-                                    <div class="transaction-avatar" style="background: #ff9500;">
-                                        <i class="fa-solid fa-cube" style="color: white; font-size: 0.8rem;"></i>
+                                    <div class="transaction-avatar activity-avatar-warning">
+                                        <i class="fa-solid fa-cube activity-avatar-icon"></i>
                                     </div>
                                     <div>
                                         <p class="transaction-name">Created new product</p>

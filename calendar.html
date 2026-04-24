@@ -130,7 +130,7 @@
                     <i class="fa-solid fa-bell"></i>
                     <span class="notification-badge">3</span>
                 </button>
-                <button class="notification-btn" style="background: var(--primary-color); border-color: var(--primary-color); color: white;">
+                <button class="notification-btn calendar-action-btn">
                     <i class="fa-solid fa-plus"></i> New Event
                 </button>
                 <div class="user-profile">
@@ -157,39 +157,39 @@
 
         <!-- Calendar Content -->
         <div class="dashboard-content">
-            <section class="additional-cards" style="grid-template-columns: 300px 1fr; gap: 1.5rem;">
+            <section class="additional-cards calendar-layout">
                 <!-- Sidebar -->
                 <div class="info-card">
                     <div class="card-header">
                         <h3>Filters</h3>
                     </div>
                     <div class="card-body">
-                        <div style="margin-bottom: 1.5rem;">
-                            <h4 style="margin: 0 0 1rem 0; font-size: 0.9rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px;">View</h4>
-                            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-                                <button style="padding: 0.75rem; background: var(--primary-color); color: white; border: none; border-radius: 8px; text-align: left; cursor: pointer; font-weight: 500;">Month</button>
-                                <button style="padding: 0.75rem; background: rgba(0, 0, 0, 0.04); color: var(--text-primary); border: 1px solid var(--glass-border); border-radius: 8px; text-align: left; cursor: pointer;">Week</button>
-                                <button style="padding: 0.75rem; background: rgba(0, 0, 0, 0.04); color: var(--text-primary); border: 1px solid var(--glass-border); border-radius: 8px; text-align: left; cursor: pointer;">Day</button>
+                        <div class="calendar-filter-section">
+                            <h4 class="calendar-section-title">View</h4>
+                            <div class="calendar-btn-group">
+                                <button class="calendar-filter-btn is-active">Month</button>
+                                <button class="calendar-filter-btn">Week</button>
+                                <button class="calendar-filter-btn">Day</button>
                             </div>
                         </div>
                         <div>
-                            <h4 style="margin: 0 0 1rem 0; font-size: 0.9rem; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px;">Events</h4>
-                            <div style="display: flex; flex-direction: column; gap: 0.75rem;">
-                                <div style="display: flex; align-items: center; gap: 0.75rem;">
-                                    <div style="width: 12px; height: 12px; background: #007aff; border-radius: 3px;"></div>
-                                    <span style="font-size: 0.9rem; color: var(--text-primary);">Meetings</span>
+                            <h4 class="calendar-section-title">Events</h4>
+                            <div class="calendar-legend-list">
+                                <div class="calendar-legend-item">
+                                    <div class="calendar-legend-dot" style="background: #007aff;"></div>
+                                    <span class="calendar-legend-label">Meetings</span>
                                 </div>
-                                <div style="display: flex; align-items: center; gap: 0.75rem;">
-                                    <div style="width: 12px; height: 12px; background: #10b981; border-radius: 3px;"></div>
-                                    <span style="font-size: 0.9rem; color: var(--text-primary);">Tasks</span>
+                                <div class="calendar-legend-item">
+                                    <div class="calendar-legend-dot" style="background: #10b981;"></div>
+                                    <span class="calendar-legend-label">Tasks</span>
                                 </div>
-                                <div style="display: flex; align-items: center; gap: 0.75rem;">
-                                    <div style="width: 12px; height: 12px; background: #ff9500; border-radius: 3px;"></div>
-                                    <span style="font-size: 0.9rem; color: var(--text-primary);">Deadlines</span>
+                                <div class="calendar-legend-item">
+                                    <div class="calendar-legend-dot" style="background: #ff9500;"></div>
+                                    <span class="calendar-legend-label">Deadlines</span>
                                 </div>
-                                <div style="display: flex; align-items: center; gap: 0.75rem;">
-                                    <div style="width: 12px; height: 12px; background: #ff2d55; border-radius: 3px;"></div>
-                                    <span style="font-size: 0.9rem; color: var(--text-primary);">Important</span>
+                                <div class="calendar-legend-item">
+                                    <div class="calendar-legend-dot" style="background: #ff2d55;"></div>
+                                    <span class="calendar-legend-label">Important</span>
                                 </div>
                             </div>
                         </div>

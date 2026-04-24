@@ -42,6 +42,17 @@ cd liquidglassadmin.github.io
 
 3. Open `index.html` in your web browser.
 
+## Webhook Packaging (Flipit)
+
+Use `flipit-webhook.php` to trigger buyer package generation after a successful purchase.
+
+- **Endpoint**: `POST /flipit-webhook.php`
+- **Auth (recommended)**: set env var `FLIPIT_WEBHOOK_SECRET` and send header `X-Flipit-Signature: sha256=<hmac_of_raw_body>`
+- **Auth (fallback)**: set env var `FLIPIT_WEBHOOK_TOKEN` and call endpoint with `?token=<same_value>`
+- **Optional payload fields**: `order_id`, `buyer_email`, `version`
+
+The endpoint generates a fresh buyer ZIP in `release/dist/` using raw `HTML/CSS/JS` assets and returns JSON metadata.
+
 ## 📁 Project Structure
 
 ```

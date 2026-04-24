@@ -2494,14 +2494,14 @@ input[type="radio"] {
     gap: 1.5rem;
 }
 
-.form-group {
+.auth-form .form-group {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     position: relative;
 }
 
-.form-group label {
+.auth-form .form-group label {
     color: var(--text-secondary);
     font-size: 0.9rem;
     font-weight: 500;
@@ -2510,11 +2510,11 @@ input[type="radio"] {
     gap: 0.5rem;
 }
 
-.form-group label i {
+.auth-form .form-group label i {
     color: var(--primary-color);
 }
 
-.form-group input {
+.auth-form .form-group input {
     width: 100%;
     padding: 0.875rem 1rem;
     padding-right: 3rem;
@@ -2528,16 +2528,16 @@ input[type="radio"] {
     min-height: var(--touch-target);
 }
 
-.form-group input:invalid:not(:placeholder-shown) {
+.auth-form .form-group input:invalid:not(:placeholder-shown) {
     border-color: #ef4444;
     background: rgba(239, 68, 68, 0.05);
 }
 
-.form-group input:valid:not(:placeholder-shown) {
+.auth-form .form-group input:valid:not(:placeholder-shown) {
     border-color: #10b981;
 }
 
-.form-group input:focus {
+.auth-form .form-group input:focus {
     outline: none;
     border-color: var(--primary-color);
     background: rgba(0, 0, 0, 0.06);
@@ -2653,6 +2653,347 @@ input[type="radio"] {
     transform: translateX(4px);
 }
 
+.auth-header .auth-logo {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.auth-header .auth-subtitle {
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.input-with-toggle {
+    position: relative;
+}
+
+.auth-row-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.auth-checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.auth-checkbox-label.auth-checkbox-label-top {
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.auth-checkbox {
+    cursor: pointer;
+}
+
+.auth-checkbox.auth-checkbox-offset {
+    margin-top: 0.25rem;
+}
+
+.auth-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.auth-link.auth-link-small {
+    font-size: 0.9rem;
+}
+
+.auth-section-spacer {
+    margin-bottom: 1.5rem;
+}
+
+.auth-divider {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--glass-border);
+}
+
+.auth-divider-text {
+    color: var(--text-secondary);
+    margin: 0 0 1rem 0;
+}
+
+.auth-security-note {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--glass-border);
+}
+
+.auth-security-note p {
+    text-align: center;
+    color: var(--text-tertiary);
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+.calendar-action-btn {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #fff;
+}
+
+.calendar-layout {
+    grid-template-columns: 300px 1fr;
+    gap: 1.5rem;
+}
+
+.calendar-filter-section {
+    margin-bottom: 1.5rem;
+}
+
+.calendar-section-title {
+    margin: 0 0 1rem 0;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.calendar-btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.calendar-filter-btn {
+    padding: 0.75rem;
+    background: rgba(0, 0, 0, 0.04);
+    color: var(--text-primary);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.calendar-filter-btn.is-active {
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    font-weight: 500;
+}
+
+.calendar-legend-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.calendar-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.calendar-legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+}
+
+.calendar-legend-label {
+    font-size: 0.9rem;
+    color: var(--text-primary);
+}
+
+.profile-layout {
+    grid-template-columns: 350px 1fr;
+    gap: 1.5rem;
+}
+
+.profile-card {
+    text-align: center;
+    padding: 2rem;
+}
+
+.profile-avatar-lg {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid var(--glass-border);
+    margin-bottom: 1.5rem;
+}
+
+.profile-name {
+    margin: 0 0 0.5rem 0;
+    color: var(--text-primary);
+}
+
+.profile-email {
+    margin: 0 0 1.5rem 0;
+    color: var(--text-secondary);
+}
+
+.btn-primary-block {
+    width: 100%;
+    padding: 0.875rem;
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.icon-btn-row {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.icon-btn {
+    padding: 0.75rem;
+    background: rgba(0, 0, 0, 0.04);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    cursor: pointer;
+    color: var(--text-primary);
+}
+
+.profile-section-gap {
+    margin-top: 1.5rem;
+}
+
+.profile-stat-row {
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.02);
+    border-radius: 12px;
+    margin-bottom: 0.75rem;
+}
+
+.profile-stat-row:last-child {
+    margin-bottom: 0;
+}
+
+.profile-stat-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-stat-label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.profile-stat-value {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+}
+
+.profile-edit-btn {
+    padding: 0.5rem 1rem;
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.profile-about-text {
+    margin: 0 0 1.5rem 0;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.profile-meta-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.profile-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.profile-meta-icon {
+    color: var(--primary-color);
+    width: 20px;
+}
+
+.profile-meta-title {
+    margin: 0;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.profile-meta-subtitle {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--text-tertiary);
+}
+
+.activity-avatar-primary { background: #007aff; }
+.activity-avatar-success { background: #10b981; }
+.activity-avatar-warning { background: #ff9500; }
+
+.activity-avatar-icon {
+    color: #fff;
+    font-size: 0.8rem;
+}
+
+.chart-btn-ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.6);
+    transform: scale(0);
+    animation: chart-btn-ripple 0.6s ease-out;
+    pointer-events: none;
+    width: 20px;
+    height: 20px;
+    left: 50%;
+    top: 50%;
+    margin-left: -10px;
+    margin-top: -10px;
+}
+
+@keyframes chart-btn-ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
+    z-index: 999;
+    transition: var(--transition-fast);
+}
+
+.scroll-to-top:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 122, 255, 0.4);
+}
+
+.scroll-to-top.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 @media (max-width: 1023px) {
     .auth-container {
         max-width: 500px;
@@ -2669,8 +3010,8 @@ input[type="radio"] {
         border-radius: 16px;
     }
     
-    .auth-header h1 {
-        font-size: 1.75rem !important;
+    .auth-header .auth-logo {
+        font-size: 1.75rem;
     }
     
     .auth-header p {
@@ -2688,16 +3029,16 @@ input[type="radio"] {
         margin-bottom: 2rem;
     }
     
-    .auth-header h1 {
-        font-size: 1.5rem !important;
-        margin-bottom: 0.75rem !important;
+    .auth-header .auth-logo {
+        font-size: 1.5rem;
+        margin-bottom: 0.75rem;
     }
     
-    .form-group label {
+    .auth-form .form-group label {
         font-size: 0.85rem;
     }
     
-    .form-group input {
+    .auth-form .form-group input {
         padding: 0.75rem 0.875rem;
         padding-right: 2.5rem;
         font-size: 0.9rem;
