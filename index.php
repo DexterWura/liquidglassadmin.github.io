@@ -14,11 +14,12 @@ if (!is_file($indexPath)) {
 }
 
 $content = (string)file_get_contents($indexPath);
-$dashboardUrl = demo_url('dashboard');
-
-$content = preg_replace(
+$content = preg_replace_callback(
     '/href=("|\')dashboard\.html\\1/i',
-    'href="$1' . $dashboardUrl . '$1',
+    static function (array $matches): string {
+        $quote = $matches[1];
+        return 'href=' . $quote . demo_url('dashboard') . $quote;
+    },
     $content
 );
 
