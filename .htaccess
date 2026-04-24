@@ -25,6 +25,7 @@ RewriteRule ^server/ - [F,L]
 RewriteCond %{REQUEST_URI} ^/assets/ [NC]
 RewriteCond %{HTTP_REFERER} !^$ [NC]
 RewriteCond %{HTTP_REFERER} !^https?://([a-z0-9-]+\.)?liquidglassadmin\.github\.io(/|$) [NC]
+RewriteCond %{HTTP_REFERER} !^https?://([a-z0-9-]+\.)?liquidglass\.dextersoft\.com(/|$) [NC]
 RewriteCond %{HTTP_REFERER} !^https?://localhost(:[0-9]+)?(/|$) [NC]
 RewriteRule \.(css|js|png|jpg|jpeg|gif|webp|svg)$ - [F,L,NC]
 
