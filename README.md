@@ -3,7 +3,7 @@
 A beautiful, modern admin dashboard template inspired by Apple's liquid glass (glassmorphism) design aesthetic. Built with pure HTML, CSS, and JavaScript - no frameworks required.
 
 ![Liquid Glass Admin Dashboard](https://img.shields.io/badge/Status-Active-success)
-![License](https://img.shields.io/badge/License-MIT-blue)
+![License](https://img.shields.io/badge/License-Commercial-red)
 
 ![Dashboard Preview](assets/images/dash.png)
 
@@ -67,7 +67,7 @@ liquid-glass-admin-template/
 ├── login.html              # Login page
 ├── signup.html             # Sign up page
 ├── README.md               # Project documentation
-├── LICENSE                 # MIT License
+├── LICENSE                 # Commercial License
 │
 └── assets/
     ├── css/
@@ -220,11 +220,11 @@ Use status badges in tables or cards:
 
 ## 📄 License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is a commercial product and is distributed under the [Liquid Glass Commercial License](LICENSE). Unauthorized redistribution, resale, or public rehosting of source files is prohibited.
 
-## 🤝 Contributing
+## 🤝 Support
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/Dexterwura/liquidglassadmin.github.io/issues).
+For support, customizations, or licensing inquiries, contact the author directly through the links in the contact section.
 
 ## 🎯 Key Improvements
 

@@ -1,0 +1,30 @@
+Options -Indexes
+
+RewriteEngine On
+
+# Force PHP landing page instead of direct index.html access.
+RewriteCond %{THE_REQUEST} \s/+index\.html[\s?] [NC]
+RewriteRule ^index\.html$ /index.php [R=302,L]
+
+# Redirect direct HTML page requests into signed demo flow when possible.
+RewriteCond %{THE_REQUEST} \s/+([a-z0-9_-]+)\.html[\s?] [NC]
+RewriteRule ^([a-z0-9_-]+)\.html$ /index.php [R=302,L]
+
+# Deny access to server internals.
+RewriteRule ^server/ - [F,L]
+
+<FilesMatch "\.(html)$">
+    Require all denied
+</FilesMatch>
+
+<FilesMatch "^(README\.md|LICENSE)$">
+    Require all denied
+</FilesMatch>
+
+# Basic anti-hotlink for local static assets.
+RewriteCond %{REQUEST_URI} ^/assets/ [NC]
+RewriteCond %{HTTP_REFERER} !^$ [NC]
+RewriteCond %{HTTP_REFERER} !^https?://([a-z0-9-]+\.)?liquidglassadmin\.github\.io(/|$) [NC]
+RewriteCond %{HTTP_REFERER} !^https?://localhost(:[0-9]+)?(/|$) [NC]
+RewriteRule \.(css|js|png|jpg|jpeg|gif|webp|svg)$ - [F,L,NC]
+
